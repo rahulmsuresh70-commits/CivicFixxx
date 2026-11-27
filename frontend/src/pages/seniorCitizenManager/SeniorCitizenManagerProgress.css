@@ -1,0 +1,1931 @@
+.scmp-progress-shell .sc-main {
+  min-width: 0;
+}
+
+.scmp-progress-kpis {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.scmp-progress-kpis .sc-stat-card {
+  padding: 16px;
+}
+
+.scmp-progress-kpis .sc-stat-label {
+  margin-top: 10px;
+  color: #6b7bb0;
+  font-size: 10px;
+}
+
+.scmp-progress-kpis .sc-stat-value {
+  margin-top: 3px;
+  color: #071039;
+  font: 800 23px 'Plus Jakarta Sans', sans-serif;
+}
+
+.scmp-progress-kpis .sc-stat-caption {
+  margin-top: 5px;
+  color: #6b7bb0;
+  font-size: 8px;
+}
+
+.scmp-progress-spin {
+  animation: scmp-progress-spin 0.9s linear infinite;
+}
+
+@keyframes scmp-progress-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.scmp-progress-table-card {
+  overflow: hidden;
+  padding: 19px;
+  border: 1px solid #cfdbf7;
+  border-radius: 12px;
+  background: #e6edfd;
+}
+
+.scmp-progress-table-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.scmp-progress-table-head h3 {
+  margin: 0;
+  color: #071039;
+  font: 700 13px 'Plus Jakarta Sans', sans-serif;
+}
+
+.scmp-progress-table-head p {
+  margin: 5px 0 0;
+  color: #6b7bb0;
+  font-size: 9px;
+}
+
+.scmp-progress-link,
+.scmp-progress-view {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 0;
+  background: transparent;
+  color: #2e5de6;
+  font: 700 9px Inter, sans-serif;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.scmp-progress-filters {
+  display: flex;
+  gap: 11px;
+  margin: 17px 0 4px;
+}
+
+.scmp-progress-search {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex: 1;
+  min-width: 180px;
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid #cfdbf7;
+  border-radius: 8px;
+  color: #6b7bb0;
+}
+
+.scmp-progress-search input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #071039;
+  font: 10px Inter, sans-serif;
+}
+
+.scmp-progress-filters select {
+  min-width: 165px;
+  padding: 0 12px;
+  border: 1px solid #cfdbf7;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #3b4a82;
+  font: 10px Inter, sans-serif;
+}
+
+.scmp-progress-table-scroll {
+  overflow: auto;
+  margin-top: 14px;
+}
+
+.scmp-progress-table {
+  width: 100%;
+  min-width: 900px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.scmp-progress-table th {
+  padding: 12px 10px;
+  background: #ffffff;
+  color: #6b7bb0;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.7px;
+  white-space: nowrap;
+}
+
+.scmp-progress-table td {
+  padding: 13px 10px;
+  border-bottom: 1px solid #cfdbf7;
+  color: #6b7bb0;
+  font-size: 9px;
+  vertical-align: middle;
+}
+
+.scmp-progress-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.scmp-progress-table td strong,
+.scmp-progress-table td small {
+  display: block;
+}
+
+.scmp-progress-table td strong {
+  color: #071039;
+  font-size: 9.5px;
+  font-weight: 700;
+}
+
+.scmp-progress-table td small {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 5px;
+  color: #6b7bb0;
+  font-size: 8px;
+}
+
+.scmp-progress-id {
+  color: #2e5de6 !important;
+}
+
+.scmp-progress-view {
+  padding: 7px 9px;
+  border: 1px solid #cfdbf7;
+  border-radius: 7px;
+  background: #ffffff;
+}
+
+.scmp-progress-view:hover {
+  background: #dbe6ff;
+}
+
+.scmp-progress-empty {
+  display: flex;
+  min-height: 180px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 9px;
+  color: #6b7bb0;
+  font-size: 10px;
+  text-align: center;
+}
+
+.scmp-progress-empty strong {
+  color: #3b4a82;
+  font-size: 12px;
+}
+
+.scmp-progress-empty span {
+  max-width: 330px;
+  line-height: 1.6;
+}
+
+.scmp-progress-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(7, 16, 57, 0.42);
+}
+
+.scmp-progress-modal {
+  width: min(100%, 650px);
+  max-height: min(90vh, 800px);
+  overflow: auto;
+  padding: 23px;
+  border: 1px solid #cfdbf7;
+  border-radius: 15px;
+  background: #ffffff;
+  box-shadow: 0 24px 80px rgba(15, 34, 112, 0.2);
+}
+
+.scmp-progress-modal-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  padding-bottom: 17px;
+  border-bottom: 1px solid #cfdbf7;
+}
+
+.scmp-progress-modal-head h2 {
+  margin: 0;
+  color: #071039;
+  font: 800 20px 'Plus Jakarta Sans', sans-serif;
+}
+
+.scmp-progress-modal-head p {
+  margin: 5px 0 0;
+  color: #6b7bb0;
+  font-size: 10px;
+}
+
+.scmp-progress-modal-head > button {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #cfdbf7;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #3b4a82;
+  cursor: pointer;
+}
+
+.scmp-progress-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1px solid #cfdbf7;
+}
+
+.scmp-progress-detail-grid small {
+  display: block;
+  color: #6b7bb0;
+  font-size: 9px;
+}
+
+.scmp-progress-detail-grid strong {
+  display: block;
+  margin-top: 5px;
+  color: #071039;
+  font-size: 10px;
+  text-transform: capitalize;
+}
+
+.scmp-progress-timeline-title {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 18px 0 13px;
+}
+
+.scmp-progress-timeline-title h3 {
+  margin: 0;
+  color: #071039;
+  font: 700 12px 'Plus Jakarta Sans', sans-serif;
+}
+
+.scmp-progress-timeline-title span {
+  color: #6b7bb0;
+  font-size: 8px;
+}
+
+.scmp-progress-timeline {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.scmp-progress-timeline li {
+  position: relative;
+  display: flex;
+  gap: 12px;
+  padding: 0 0 18px;
+}
+
+.scmp-progress-timeline li:not(:last-child)::before {
+  position: absolute;
+  top: 27px;
+  bottom: 0;
+  left: 13px;
+  width: 1px;
+  background: #ffffff;
+  content: '';
+}
+
+.scmp-progress-timeline-icon {
+  position: relative;
+  z-index: 1;
+  width: 27px;
+  height: 27px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 27px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #2e5de6;
+}
+
+.scmp-progress-timeline li > div {
+  flex: 1;
+  min-width: 0;
+  padding-top: 2px;
+}
+
+.scmp-progress-timeline li strong {
+  display: block;
+  color: #071039;
+  font-size: 10px;
+}
+
+.scmp-progress-timeline time {
+  display: block;
+  margin-top: 4px;
+  color: #6b7bb0;
+  font-size: 8.5px;
+}
+
+.scmp-progress-timeline li p {
+  margin: 6px 0 0;
+  color: #6b7bb0;
+  font-size: 9px;
+  line-height: 1.6;
+}
+
+.scmp-progress-empty-note {
+  padding: 20px;
+  border-radius: 9px;
+  background: #f3f7ff;
+  color: #6b7bb0;
+  font-size: 10px;
+  text-align: center;
+}
+
+.scmp-progress-history-note {
+  margin: 13px 0 0;
+  padding: 11px;
+  border-radius: 8px;
+  background: #f3f7ff;
+  color: #6b7bb0;
+  font-size: 8.5px;
+  line-height: 1.6;
+}
+
+.scmp-progress-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 9px;
+  margin-top: 18px;
+}
+
+.scmp-progress-modal-actions button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 36px;
+  padding: 0 12px;
+  border: 1px solid #2e5de6;
+  border-radius: 8px;
+  background: #2e5de6;
+  color: #fff;
+  font: 700 9px Inter, sans-serif;
+  cursor: pointer;
+}
+
+.scmp-progress-modal-actions button.secondary {
+  border-color: #cfdbf7;
+  background: #ffffff;
+  color: #3b4a82;
+}
+
+@media (max-width: 1100px) {
+  .scmp-progress-kpis {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .scmp-progress-kpis {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .scmp-progress-kpis {
+    gap: 9px;
+  }
+
+  .scmp-progress-kpis .sc-stat-card {
+    padding: 12px;
+  }
+
+  .scmp-progress-kpis .sc-stat-value {
+    font-size: 19px;
+  }
+
+  .scmp-progress-filters {
+    flex-direction: column;
+  }
+
+  .scmp-progress-filters select {
+    height: 40px;
+  }
+
+  .scmp-progress-table-card {
+    padding: 14px;
+  }
+
+  .scmp-progress-table-head {
+    align-items: flex-start;
+  }
+
+  .scmp-progress-modal {
+    padding: 17px;
+  }
+
+  .scmp-progress-detail-grid {
+    gap: 13px;
+  }
+
+  .scmp-progress-timeline-title {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .scmp-progress-modal-actions {
+    flex-direction: column-reverse;
+  }
+
+  .scmp-progress-modal-actions button {
+    justify-content: center;
+  }
+}
+/* ==========================================
+   EXPANDED PROGRESS TIMELINE MODAL
+========================================== */
+
+.scmp-progress-modal-expanded {
+  width: min(100%, 850px);
+  max-height: 92vh;
+  padding: 25px;
+}
+
+.scmp-progress-modal-expanded .scmp-progress-modal-head {
+  align-items: flex-start;
+}
+
+.scmp-progress-modal-expanded .scmp-progress-modal-head h2 {
+  font-size: 21px;
+}
+
+.scmp-modal-status {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.scmp-modal-status > span:last-child {
+  color: #6b7bb0;
+  font-size: 9px;
+}
+
+/* Sections */
+
+.scmp-modal-section {
+  padding: 20px 0;
+  border-bottom: 1px solid #cfdbf7;
+}
+
+.scmp-modal-section:last-of-type {
+  border-bottom: 0;
+}
+
+.scmp-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 17px;
+}
+
+.scmp-section-heading > span {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 34px;
+  border-radius: 9px;
+  background: #dbe6ff;
+  color: #2e5de6;
+}
+
+.scmp-section-heading h3 {
+  margin: 0;
+  color: #071039;
+  font: 700 13px 'Plus Jakarta Sans', sans-serif;
+}
+
+.scmp-section-heading p {
+  margin: 4px 0 0;
+  color: #6b7bb0;
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+/* Workflow tracker */
+
+.scmp-workflow {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 22px;
+  row-gap: 0;
+}
+
+.scmp-workflow-step {
+  position: relative;
+  display: flex;
+  gap: 11px;
+  min-height: 75px;
+  padding-bottom: 14px;
+}
+
+.scmp-workflow-step:not(:nth-last-child(-n + 2))::after {
+  position: absolute;
+  top: 29px;
+  bottom: 0;
+  left: 13px;
+  width: 2px;
+  background: #ffffff;
+  content: '';
+}
+
+.scmp-workflow-marker {
+  position: relative;
+  z-index: 1;
+  width: 27px;
+  height: 27px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 27px;
+  border: 1px solid #cfdbf7;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #6b7bb0;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.scmp-workflow-copy {
+  min-width: 0;
+  padding-top: 2px;
+}
+
+.scmp-workflow-copy strong {
+  display: block;
+  color: #6b7bb0;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.scmp-workflow-copy p {
+  margin: 4px 0 0;
+  color: #6b7bb0;
+  font-size: 8.5px;
+  line-height: 1.5;
+}
+
+.scmp-workflow-copy small {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 4px 7px;
+  border-radius: 5px;
+  background: #dbe6ff;
+  color: #2e5de6;
+  font-size: 8px;
+  font-weight: 700;
+}
+
+.scmp-workflow-step.is-complete .scmp-workflow-marker {
+  border-color: #99f6e4;
+  background: #ccfbf1;
+  color: #0f766e;
+}
+
+.scmp-workflow-step.is-complete .scmp-workflow-copy strong {
+  color: #071039;
+}
+
+.scmp-workflow-step.is-complete:not(:nth-last-child(-n + 2))::after {
+  background: #22c55e;
+}
+
+.scmp-workflow-step.is-current .scmp-workflow-marker {
+  border: 2px solid #2e5de6;
+  background: #dbe6ff;
+  color: #2e5de6;
+  box-shadow: 0 0 0 4px rgba(46, 93, 230, 0.08);
+}
+
+.scmp-workflow-step.is-current .scmp-workflow-copy strong {
+  color: #2e5de6;
+}
+
+.scmp-rejected-panel {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  padding: 14px;
+  border: 1px solid #fecaca;
+  border-radius: 9px;
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+.scmp-rejected-panel strong {
+  font-size: 11px;
+}
+
+.scmp-rejected-panel p {
+  margin: 5px 0 0;
+  color: #6b7bb0;
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+/* Request information */
+
+.scmp-expanded-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 17px 20px;
+}
+
+.scmp-detail-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  min-width: 0;
+}
+
+.scmp-detail-icon {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 30px;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #3b4a82;
+}
+
+.scmp-detail-item > div {
+  min-width: 0;
+}
+
+.scmp-detail-item small,
+.scmp-location-card small {
+  display: block;
+  color: #6b7bb0;
+  font-size: 9px;
+}
+
+.scmp-detail-item strong,
+.scmp-location-card strong {
+  display: block;
+  margin-top: 5px;
+  overflow-wrap: anywhere;
+  color: #071039;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.scmp-detail-item > div > span {
+  display: block;
+  margin-top: 4px;
+  color: #6b7bb0;
+  font-size: 8.5px;
+}
+
+.scmp-description-block {
+  margin-top: 17px;
+  padding: 14px;
+  border: 1px solid #cfdbf7;
+  border-radius: 9px;
+  background: #f3f7ff;
+}
+
+.scmp-description-block small {
+  color: #6b7bb0;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.scmp-description-block p {
+  margin: 7px 0 0;
+  color: #3b4a82;
+  font-size: 10px;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+/* Staff card */
+
+.scmp-staff-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid #cfdbf7;
+  border-radius: 10px;
+  background: #f3f7ff;
+}
+
+.scmp-staff-avatar {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 42px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #2e5de6;
+}
+
+.scmp-staff-info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.scmp-staff-info strong {
+  color: #071039;
+  font-size: 11px;
+}
+
+.scmp-staff-info span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  overflow-wrap: anywhere;
+  color: #6b7bb0;
+  font-size: 9px;
+}
+
+.scmp-transfer-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 11px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: #fef3c7;
+  color: #b45309;
+  font-size: 9px;
+}
+
+/* Location details */
+
+.scmp-location-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.scmp-location-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  min-width: 0;
+  padding: 13px;
+  border: 1px solid #cfdbf7;
+  border-radius: 9px;
+  background: #f3f7ff;
+}
+
+.scmp-location-card > div {
+  min-width: 0;
+}
+
+.scmp-location-pin {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 30px;
+  border-radius: 8px;
+}
+
+.scmp-location-pin.pickup {
+  background: #ffffff;
+  color: #2e5de6;
+}
+
+.scmp-location-pin.destination {
+  background: #ccfbf1;
+  color: #0f766e;
+}
+
+.scmp-area-line {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 12px 0;
+  color: #6b7bb0;
+  font-size: 9px;
+}
+
+/* Map */
+
+.scmp-map-wrap {
+  overflow: hidden;
+  border: 1px solid #cfdbf7;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.scmp-request-map {
+  width: 100%;
+  height: 300px;
+  z-index: 1;
+}
+
+.scmp-map-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 17px;
+  padding: 11px 13px;
+  border-top: 1px solid #cfdbf7;
+  background: #ffffff;
+}
+
+.scmp-map-legend span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #6b7bb0;
+  font-size: 9px;
+}
+
+.scmp-map-legend i {
+  width: 9px;
+  height: 9px;
+  display: inline-block;
+  border-radius: 50%;
+}
+
+.scmp-map-legend .pickup-dot {
+  background: #2e5de6;
+}
+
+.scmp-map-legend .destination-dot {
+  background: #22c55e;
+}
+
+.scmp-map-unavailable {
+  display: flex;
+  min-height: 160px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px;
+  border: 1px dashed #cfdbf7;
+  border-radius: 10px;
+  background: #f3f7ff;
+  color: #6b7bb0;
+  text-align: center;
+}
+
+.scmp-map-unavailable strong {
+  color: #3b4a82;
+  font-size: 11px;
+}
+
+.scmp-map-unavailable p {
+  max-width: 380px;
+  margin: 0;
+  color: #6b7bb0;
+  font-size: 9px;
+  line-height: 1.6;
+}
+
+/* Completion information */
+
+.scmp-completion-dates {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 12px;
+  color: #6b7bb0;
+  font-size: 9px;
+}
+
+/* Modal action buttons */
+
+.scmp-progress-modal-expanded .scmp-progress-modal-actions {
+  position: sticky;
+  bottom: -25px;
+  padding: 13px 0 0;
+  background: #ffffff;
+}
+
+/* Responsive */
+
+@media (max-width: 700px) {
+  .scmp-progress-modal-expanded {
+    max-height: 94vh;
+    padding: 17px;
+  }
+
+  .scmp-workflow {
+    grid-template-columns: 1fr;
+  }
+
+  .scmp-workflow-step:not(:last-child)::after {
+    bottom: 0;
+  }
+
+  .scmp-expanded-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .scmp-location-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .scmp-request-map {
+    height: 240px;
+  }
+
+  .scmp-staff-card {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .scmp-staff-card > .scmp-status {
+    margin-left: 54px;
+  }
+}
+
+@media (max-width: 420px) {
+  .scmp-progress-modal-expanded {
+    padding: 14px;
+  }
+
+  .scmp-progress-modal-expanded .scmp-progress-modal-head h2 {
+    font-size: 17px;
+  }
+
+  .scmp-modal-section {
+    padding: 16px 0;
+  }
+
+  .scmp-section-heading h3 {
+    font-size: 12px;
+  }
+
+  .scmp-request-map {
+    height: 210px;
+  }
+
+  .scmp-completion-dates {
+    flex-direction: column;
+    gap: 6px;
+  }
+}
+
+/* =========================================
+   CIVICFIX PROGRESS TRACKING - CSS FIX
+   Append this at the END of the CSS file
+========================================= */
+
+/* Page layout */
+.scmp-progress-shell .sc-content {
+  padding: 28px 30px;
+  background: #ffffff;
+}
+
+.scmp-progress-shell .sc-main {
+  min-width: 0;
+  background: #ffffff;
+}
+
+.scmp-progress-shell .sc-header {
+  background: #ffffff;
+  border-bottom: 1px solid #cfdbf7;
+}
+
+.scmp-page-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 23px;
+}
+
+.scmp-page-heading > div {
+  min-width: 0;
+}
+
+.scmp-page-heading h1 {
+  margin: 7px 0;
+  color: #071039;
+  font: 800 25px 'Plus Jakarta Sans', sans-serif;
+  letter-spacing: -0.7px;
+}
+
+.scmp-page-heading p {
+  margin: 0;
+  color: #6b7bb0;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.scmp-eyebrow {
+  display: inline-block;
+  color: #2e5de6;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+/* Refresh button */
+.scmp-refresh {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex: 0 0 auto;
+  min-height: 38px;
+  padding: 0 14px;
+  border: 1px solid #cfdbf7;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #2e5de6;
+  font: 700 10px Inter, sans-serif;
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+.scmp-refresh:hover {
+  background: #dbe6ff;
+  border-color: #cfdbf7;
+}
+
+.scmp-refresh:disabled {
+  opacity: .6;
+  cursor: not-allowed;
+}
+
+/* Error message */
+.scmp-alert {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 17px;
+  padding: 12px 15px;
+  border: 1px solid #fecaca;
+  border-radius: 9px;
+  background: #fef2f2;
+  color: #b91c1c;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+/* KPI cards */
+.scmp-progress-kpis {
+  margin-bottom: 19px;
+}
+
+.scmp-progress-kpis .sc-stat-card {
+  min-width: 0;
+  min-height: 143px;
+  padding: 16px;
+  border: 1px solid #cfdbf7;
+  border-radius: 12px;
+  background: #e6edfd;
+  box-shadow: 0 3px 12px rgba(15, 34, 112, .025);
+}
+
+.scmp-progress-kpis .sc-stat-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.scmp-progress-kpis .sc-stat-icon {
+  width: 39px;
+  height: 39px;
+  display: grid;
+  place-items: center;
+  border-radius: 11px;
+}
+
+.scmp-progress-kpis .sc-stat-icon.blue {
+  background: #ffffff;
+  color: #2e5de6;
+}
+
+.scmp-progress-kpis .sc-stat-icon.orange {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.scmp-progress-kpis .sc-stat-icon.purple {
+  background: #ede9fe;
+  color: #5b3fd1;
+}
+
+.scmp-progress-kpis .sc-stat-icon.green {
+  background: #ccfbf1;
+  color: #0f766e;
+}
+
+/* Request table card */
+.scmp-progress-table-card {
+  border: 1px solid #cfdbf7;
+  border-radius: 13px;
+  background: #e6edfd;
+  box-shadow: 0 3px 14px rgba(15, 34, 112, .025);
+}
+
+.scmp-progress-table-head h3 {
+  font-size: 13px;
+}
+
+.scmp-progress-table-head p {
+  font-size: 9px;
+}
+
+.scmp-progress-filters {
+  align-items: center;
+}
+
+.scmp-progress-search {
+  background: #ffffff;
+}
+
+.scmp-progress-search:focus-within {
+  border-color: #afc5f8;
+  box-shadow: 0 0 0 3px rgba(46, 93, 230, .07);
+}
+
+.scmp-progress-filters select {
+  height: 40px;
+  outline: none;
+}
+
+.scmp-progress-filters select:focus {
+  border-color: #afc5f8;
+}
+
+.scmp-progress-table th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.scmp-progress-table tbody tr {
+  transition: background .18s ease;
+}
+
+.scmp-progress-table tbody tr:hover {
+  background: #f3f7ff;
+}
+
+/* Status badges */
+.scmp-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  max-width: 140px;
+  padding: 6px 9px;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  background: #ffffff;
+  color: #3b4a82;
+  font-size: 8px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  text-transform: capitalize;
+  white-space: normal;
+}
+
+.scmp-status.submitted,
+.scmp-status.under-review {
+  border-color: #fde68a;
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.scmp-status.approved,
+.scmp-status.assigned {
+  border-color: #cfdbf7;
+  background: #dbe6ff;
+  color: #2e5de6;
+}
+
+.scmp-status.in-progress,
+.scmp-status.on-the-way,
+.scmp-status.arrived,
+.scmp-status.pickup-completed,
+.scmp-status.in-transit {
+  border-color: #ddd6fe;
+  background: #ede9fe;
+  color: #5b3fd1;
+}
+
+.scmp-status.completed,
+.scmp-status.closed {
+  border-color: #99f6e4;
+  background: #ccfbf1;
+  color: #0f766e;
+}
+
+.scmp-status.rejected {
+  border-color: #fecaca;
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+/* Expanded modal */
+.scmp-progress-modal-expanded {
+  width: min(100%, 850px);
+  max-height: 92vh;
+  padding: 25px;
+  border-radius: 16px;
+}
+
+.scmp-progress-modal-expanded .scmp-progress-modal-head {
+  align-items: flex-start;
+  padding-bottom: 18px;
+}
+
+.scmp-progress-modal-expanded .scmp-progress-modal-head h2 {
+  margin-top: 6px;
+  font-size: 21px;
+}
+
+.scmp-modal-status {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.scmp-modal-status > span:last-child {
+  color: #6b7bb0;
+  font-size: 9px;
+}
+
+/* Modal sections */
+.scmp-modal-section {
+  padding: 20px 0;
+  border-bottom: 1px solid #cfdbf7;
+}
+
+.scmp-modal-section:last-of-type {
+  border-bottom: 0;
+}
+
+.scmp-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 17px;
+}
+
+.scmp-section-heading > span {
+  width: 35px;
+  height: 35px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 35px;
+  border-radius: 9px;
+  background: #dbe6ff;
+  color: #2e5de6;
+}
+
+.scmp-section-heading h3 {
+  margin: 0;
+  color: #071039;
+  font: 700 13px 'Plus Jakarta Sans', sans-serif;
+}
+
+.scmp-section-heading p {
+  margin: 4px 0 0;
+  color: #6b7bb0;
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+/* Workflow */
+.scmp-workflow {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 22px;
+}
+
+.scmp-workflow-step {
+  position: relative;
+  display: flex;
+  gap: 11px;
+  min-height: 76px;
+  padding-bottom: 14px;
+}
+
+.scmp-workflow-step:not(:nth-last-child(-n + 2))::after {
+  position: absolute;
+  top: 29px;
+  bottom: 0;
+  left: 13px;
+  width: 2px;
+  background: #ffffff;
+  content: '';
+}
+
+.scmp-workflow-marker {
+  position: relative;
+  z-index: 1;
+  width: 27px;
+  height: 27px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 27px;
+  border: 1px solid #cfdbf7;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #6b7bb0;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.scmp-workflow-copy {
+  min-width: 0;
+  padding-top: 2px;
+}
+
+.scmp-workflow-copy strong {
+  display: block;
+  color: #6b7bb0;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.scmp-workflow-copy p {
+  margin: 4px 0 0;
+  color: #6b7bb0;
+  font-size: 8.5px;
+  line-height: 1.5;
+}
+
+.scmp-workflow-copy small {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 4px 7px;
+  border-radius: 5px;
+  background: #dbe6ff;
+  color: #2e5de6;
+  font-size: 8px;
+  font-weight: 700;
+}
+
+.scmp-workflow-step.is-complete .scmp-workflow-marker {
+  border-color: #99f6e4;
+  background: #ccfbf1;
+  color: #0f766e;
+}
+
+.scmp-workflow-step.is-complete .scmp-workflow-copy strong {
+  color: #071039;
+}
+
+.scmp-workflow-step.is-complete:not(:nth-last-child(-n + 2))::after {
+  background: #22c55e;
+}
+
+.scmp-workflow-step.is-current .scmp-workflow-marker {
+  border: 2px solid #2e5de6;
+  background: #dbe6ff;
+  color: #2e5de6;
+  box-shadow: 0 0 0 4px rgba(46, 93, 230, .08);
+}
+
+.scmp-workflow-step.is-current .scmp-workflow-copy strong {
+  color: #2e5de6;
+}
+
+.scmp-rejected-panel {
+  display: flex;
+  gap: 11px;
+  padding: 14px;
+  border: 1px solid #fecaca;
+  border-radius: 9px;
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+.scmp-rejected-panel strong {
+  font-size: 11px;
+}
+
+.scmp-rejected-panel p {
+  margin: 5px 0 0;
+  color: #6b7bb0;
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+/* Detail grid */
+.scmp-expanded-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 17px 20px;
+}
+
+.scmp-detail-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  min-width: 0;
+}
+
+.scmp-detail-icon {
+  width: 31px;
+  height: 31px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 31px;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #3b4a82;
+}
+
+.scmp-detail-item > div {
+  min-width: 0;
+}
+
+.scmp-detail-item small,
+.scmp-location-card small {
+  display: block;
+  color: #6b7bb0;
+  font-size: 9px;
+}
+
+.scmp-detail-item strong,
+.scmp-location-card strong {
+  display: block;
+  margin-top: 5px;
+  overflow-wrap: anywhere;
+  color: #071039;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.scmp-detail-item > div > span {
+  display: block;
+  margin-top: 4px;
+  color: #6b7bb0;
+  font-size: 8.5px;
+}
+
+.scmp-description-block {
+  margin-top: 17px;
+  padding: 14px;
+  border: 1px solid #cfdbf7;
+  border-radius: 9px;
+  background: #f3f7ff;
+}
+
+.scmp-description-block small {
+  color: #6b7bb0;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.scmp-description-block p {
+  margin: 7px 0 0;
+  color: #3b4a82;
+  font-size: 10px;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+/* Staff details */
+.scmp-staff-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid #cfdbf7;
+  border-radius: 10px;
+  background: #f3f7ff;
+}
+
+.scmp-staff-avatar {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 42px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #2e5de6;
+}
+
+.scmp-staff-info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.scmp-staff-info strong {
+  color: #071039;
+  font-size: 11px;
+}
+
+.scmp-staff-info span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  overflow-wrap: anywhere;
+  color: #6b7bb0;
+  font-size: 9px;
+}
+
+.scmp-transfer-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 11px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: #fef3c7;
+  color: #b45309;
+  font-size: 9px;
+}
+
+/* Locations */
+.scmp-location-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.scmp-location-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  min-width: 0;
+  padding: 13px;
+  border: 1px solid #cfdbf7;
+  border-radius: 9px;
+  background: #f3f7ff;
+}
+
+.scmp-location-card > div {
+  min-width: 0;
+}
+
+.scmp-location-pin {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 30px;
+  border-radius: 8px;
+}
+
+.scmp-location-pin.pickup {
+  background: #ffffff;
+  color: #2e5de6;
+}
+
+.scmp-location-pin.destination {
+  background: #ccfbf1;
+  color: #0f766e;
+}
+
+.scmp-area-line {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 12px 0;
+  color: #6b7bb0;
+  font-size: 9px;
+}
+
+/* Map */
+.scmp-map-wrap {
+  overflow: hidden;
+  border: 1px solid #cfdbf7;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.scmp-request-map {
+  width: 100%;
+  height: 300px;
+  z-index: 1;
+}
+
+.scmp-map-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 17px;
+  padding: 11px 13px;
+  border-top: 1px solid #cfdbf7;
+  background: #ffffff;
+}
+
+.scmp-map-legend span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #6b7bb0;
+  font-size: 9px;
+}
+
+.scmp-map-legend i {
+  width: 9px;
+  height: 9px;
+  display: inline-block;
+  border-radius: 50%;
+}
+
+.scmp-map-legend .pickup-dot {
+  background: #2e5de6;
+}
+
+.scmp-map-legend .destination-dot {
+  background: #22c55e;
+}
+
+.scmp-map-unavailable {
+  display: flex;
+  min-height: 160px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px;
+  border: 1px dashed #cfdbf7;
+  border-radius: 10px;
+  background: #f3f7ff;
+  color: #6b7bb0;
+  text-align: center;
+}
+
+.scmp-map-unavailable strong {
+  color: #3b4a82;
+  font-size: 11px;
+}
+
+.scmp-map-unavailable p {
+  max-width: 380px;
+  margin: 0;
+  color: #6b7bb0;
+  font-size: 9px;
+  line-height: 1.6;
+}
+
+/* Completion */
+.scmp-completion-dates {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 12px;
+  color: #6b7bb0;
+  font-size: 9px;
+}
+
+/* Modal actions */
+.scmp-progress-modal-expanded .scmp-progress-modal-actions {
+  position: sticky;
+  bottom: -25px;
+  padding: 13px 0 0;
+  background: #ffffff;
+}
+
+/* Footer */
+.scmp-progress-shell .sc-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 20px;
+  padding: 14px 2px;
+  color: #6b7bb0;
+  font-size: 9px;
+}
+
+.scmp-progress-shell .sc-footer span:last-child {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .scmp-progress-shell .sc-content {
+    padding: 23px 20px;
+  }
+
+  .scmp-page-heading h1 {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 700px) {
+  .scmp-progress-shell .sc-content {
+    padding: 17px 13px;
+  }
+
+  .scmp-page-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .scmp-page-heading h1 {
+    font-size: 21px;
+  }
+
+  .scmp-workflow {
+    grid-template-columns: 1fr;
+  }
+
+  .scmp-workflow-step:not(:last-child)::after {
+    bottom: 0;
+  }
+
+  .scmp-expanded-grid,
+  .scmp-location-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .scmp-progress-modal-expanded {
+    max-height: 94vh;
+    padding: 17px;
+  }
+
+  .scmp-request-map {
+    height: 240px;
+  }
+
+  .scmp-staff-card {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .scmp-progress-shell .sc-footer {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 420px) {
+  .scmp-progress-modal-expanded {
+    padding: 14px;
+  }
+
+  .scmp-progress-modal-expanded .scmp-progress-modal-head h2 {
+    font-size: 17px;
+  }
+
+  .scmp-modal-section {
+    padding: 16px 0;
+  }
+
+  .scmp-request-map {
+    height: 210px;
+  }
+
+  .scmp-completion-dates {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .scmp-progress-table-card {
+    padding: 12px;
+  }
+}
+
+/* =========================================================
+   MANAGER 2 THEME - MOTION & INTERACTION LAYER
+   Colours: sidebar #0f2270 | page #ffffff | cards #e6edfd
+   buttons #2e5de6 | accent #f59e0b | text #071039
+   (Appended layer: transitions and animations only.)
+========================================================= */
+
+@keyframes scmp-pg-fade-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes scmp-pg-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scmp-pg-pop {
+  from { opacity: 0; transform: translateY(12px) scale(.98); }
+  to { opacity: 1; transform: none; }
+}
+
+.scmp-page-heading {
+  animation: scmp-pg-fade-up .5s ease backwards;
+}
+
+.scmp-progress-table-card {
+  animation: scmp-pg-fade-up .55s ease backwards;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.scmp-progress-table tbody tr {
+  transition: background-color .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+
+.scmp-refresh,
+.scmp-progress-view,
+.scmp-progress-modal-actions button,
+.scmp-progress-filters select {
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease, transform .15s ease;
+}
+
+.scmp-progress-modal-backdrop {
+  animation: scmp-pg-fade .2s ease;
+}
+
+.scmp-progress-modal {
+  animation: scmp-pg-pop .28s cubic-bezier(.2, .8, .2, 1);
+}
+
+.scmp-progress-table-card:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.scmp-refresh:not(:disabled):active,
+.scmp-progress-view:active,
+.scmp-progress-modal-actions button:not(:disabled):active {
+  transform: scale(.97);
+}
+
+@media (max-width: 420px) {
+  .scmp-progress-kpis {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scmp-progress-shell,
+  .scmp-progress-shell *,
+  .scmp-progress-shell *::before,
+  .scmp-progress-shell *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* =========================================================
+   SIDEBAR SCROLLBAR - hidden (sidebar still scrolls by
+   mouse wheel, touch and keyboard on short screens)
+========================================================= */
+
+.scmp-progress-shell .sc-sidebar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  overscroll-behavior: contain;
+}
+
+.scmp-progress-shell .sc-sidebar::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}

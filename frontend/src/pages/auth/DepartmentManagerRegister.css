@@ -1,0 +1,566 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
+/* =========================================================
+   Department Manager Registration
+   Manager 1 theme: navy #071039 / #0f2270, royal blue #1a3bb0,
+   light blue #e6edfd, white card, teal accent #14b8a6
+   ========================================================= */
+
+.dm-register-page {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #e6edfd;
+  padding: 0 6%;
+  font-family: 'Inter', sans-serif;
+  color: #071039;
+}
+
+/* Soft background shapes (decoration only) */
+
+.dm-register-page::before,
+.dm-register-page::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.dm-register-page::before {
+  top: -240px;
+  right: -140px;
+  width: 560px;
+  height: 560px;
+  background: rgba(26, 59, 176, .1);
+}
+
+.dm-register-page::after {
+  bottom: -300px;
+  left: -160px;
+  width: 540px;
+  height: 540px;
+  background: rgba(20, 184, 166, .12);
+}
+
+.dm-register-header,
+.dm-register-wrapper,
+.dm-register-footer {
+  position: relative;
+  z-index: 1;
+}
+
+.dm-register-page *,
+.dm-register-page *::before,
+.dm-register-page *::after {
+  box-sizing: border-box;
+}
+
+.dm-register-page button:focus-visible,
+.dm-register-page a:focus-visible {
+  outline: 2px solid #14b8a6;
+  outline-offset: 2px;
+}
+
+/* Header */
+
+.dm-register-header {
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dm-register-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #071039;
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: 800;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.dm-register-brand > span:last-child > span {
+  color: #0f766e;
+}
+
+.dm-register-brand small {
+  display: block;
+  margin-top: 3px;
+  color: #3b4a82;
+  font-family: Inter, sans-serif;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+}
+
+.dm-register-brand-icon {
+  width: 47px;
+  height: 47px;
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  background: #1a3bb0;
+  border-radius: 13px;
+  box-shadow: 0 8px 18px rgba(26, 59, 176, .28);
+}
+
+.dm-register-back {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 14px;
+  border: 1px solid #cfdbf7;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #3b4a82;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color .2s, border-color .2s;
+}
+
+.dm-register-back:hover {
+  color: #1a3bb0;
+  border-color: #2e5de6;
+}
+
+/* Page heading */
+
+.dm-register-wrapper {
+  width: 100%;
+  max-width: 760px;
+  margin: 40px auto 65px;
+}
+
+.dm-register-heading {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.dm-register-heading-icon {
+  width: 55px;
+  height: 55px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 16px;
+  color: #1a3bb0;
+  background: #dbe6ff;
+  border-radius: 16px;
+}
+
+.dm-register-heading > span {
+  color: #0f766e;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  font-weight: 800;
+}
+
+.dm-register-heading h1 {
+  margin: 12px 0 9px;
+  color: #071039;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 29px;
+  font-weight: 800;
+}
+
+.dm-register-heading p {
+  margin: 0;
+  color: #3b4a82;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* Form card */
+
+.dm-register-card {
+  padding: 34px;
+  border: 1px solid #cfdbf7;
+  border-top: 4px solid #14b8a6;
+  border-radius: 19px;
+  background: #ffffff;
+  box-shadow: 0 20px 55px rgba(7, 16, 57, .12);
+}
+
+.dm-register-section-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 17px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e3eafc;
+  color: #1a3bb0;
+}
+
+.dm-register-section-title h3 {
+  margin: 0 0 4px;
+  color: #071039;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 15px;
+}
+
+.dm-register-section-title p {
+  margin: 0;
+  color: #3b4a82;
+  font-size: 11px;
+}
+
+.dm-register-manager-title {
+  margin-top: 30px;
+}
+
+.dm-register-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 19px 16px;
+}
+
+.dm-register-field {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dm-register-field.full {
+  grid-column: 1 / -1;
+}
+
+.dm-register-field label {
+  color: #071039;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.dm-register-field input,
+.dm-register-field textarea {
+  width: 100%;
+  min-height: 47px;
+  padding: 12px 13px;
+  border: 1px solid #cfdbf7;
+  border-radius: 9px;
+  outline: none;
+  background: #ffffff;
+  color: #071039;
+  font-family: inherit;
+  font-size: 12px;
+  transition: .2s;
+}
+
+.dm-register-field textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.dm-register-field input:hover,
+.dm-register-field textarea:hover {
+  border-color: #afc5f8;
+}
+
+.dm-register-field input:focus,
+.dm-register-field textarea:focus {
+  border-color: #2e5de6;
+  box-shadow: 0 0 0 3px rgba(46, 93, 230, .15);
+}
+
+.dm-register-field input::placeholder,
+.dm-register-field textarea::placeholder {
+  color: #6b7bb0;
+}
+
+.dm-register-field small {
+  color: #6b7bb0;
+  font-size: 10px;
+}
+
+.dm-register-input-icon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 47px;
+  padding: 0 12px;
+  border: 1px solid #cfdbf7;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #6b7bb0;
+  transition: border-color .2s, box-shadow .2s;
+}
+
+.dm-register-input-icon:focus-within {
+  border-color: #2e5de6;
+  color: #1a3bb0;
+  box-shadow: 0 0 0 3px rgba(46, 93, 230, .15);
+}
+
+.dm-register-input-icon input {
+  min-width: 0;
+  flex: 1;
+  padding: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: #071039;
+  font-family: inherit;
+  font-size: 12px;
+}
+
+.dm-register-input-icon input:focus {
+  box-shadow: none;
+}
+
+.dm-register-input-icon button {
+  display: grid;
+  place-items: center;
+  padding: 4px;
+  border: 0;
+  background: transparent;
+  color: #6b7bb0;
+  cursor: pointer;
+}
+
+.dm-register-input-icon button:hover {
+  color: #1a3bb0;
+}
+
+/* Buttons */
+
+.dm-register-submit,
+.dm-register-google {
+  width: 100%;
+  min-height: 51px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  margin-top: 26px;
+  border: 0;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.dm-register-submit {
+  background: #1a3bb0;
+  color: #ffffff;
+  box-shadow: 0 8px 18px rgba(26, 59, 176, .25);
+}
+
+.dm-register-submit:hover:not(:disabled) {
+  background: #0f2270;
+  transform: translateY(-1px);
+}
+
+.dm-register-submit:disabled {
+  opacity: .65;
+  cursor: not-allowed;
+}
+
+.dm-register-divider {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin: 25px 0 17px;
+}
+
+.dm-register-divider span {
+  height: 1px;
+  flex: 1;
+  background: #cfdbf7;
+}
+
+.dm-register-divider p {
+  margin: 0;
+  color: #6b7bb0;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.dm-register-google {
+  margin-top: 0;
+  border: 1px solid #cfdbf7;
+  background: #ffffff;
+  color: #071039;
+}
+
+.dm-register-google:hover:not(:disabled) {
+  background: #e6edfd;
+  border-color: #afc5f8;
+}
+
+.dm-register-google:disabled {
+  cursor: not-allowed;
+  opacity: .65;
+}
+
+/* Notes, links, errors */
+
+.dm-register-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 14px;
+  margin-top: 23px;
+  border: 1px solid #99f6e4;
+  border-radius: 9px;
+  background: #f0fdfa;
+  color: #0f766e;
+}
+
+.dm-register-note svg {
+  flex-shrink: 0;
+}
+
+.dm-register-note p {
+  margin: 0;
+  color: #115e59;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.dm-register-login-link {
+  margin-top: 24px;
+  text-align: center;
+  color: #3b4a82;
+  font-size: 12px;
+}
+
+.dm-register-login-link a {
+  color: #1a3bb0;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.dm-register-login-link a:hover {
+  text-decoration: underline;
+}
+
+.dm-register-error {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 13px;
+  margin-bottom: 22px;
+  border: 1px solid #fecaca;
+  border-radius: 9px;
+  background: #fef2f2;
+  color: #991b1b;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.dm-register-error svg {
+  flex-shrink: 0;
+}
+
+.dm-register-footer {
+  padding: 20px 0 25px;
+  text-align: center;
+  color: #3b4a82;
+  font-size: 10px;
+}
+
+.dm-register-spin {
+  animation: dm-register-rotate 1s linear infinite;
+}
+
+@keyframes dm-register-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dm-register-spin {
+    animation-duration: 2s;
+  }
+
+  .dm-register-submit,
+  .dm-register-google {
+    transition: none;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .dm-register-page {
+    padding: 0 15px;
+  }
+
+  .dm-register-header {
+    height: 75px;
+  }
+
+  .dm-register-brand {
+    font-size: 18px;
+  }
+
+  .dm-register-brand-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .dm-register-back {
+    padding: 8px 11px;
+    font-size: 11px;
+  }
+
+  .dm-register-wrapper {
+    margin-top: 28px;
+  }
+
+  .dm-register-heading h1 {
+    font-size: 23px;
+  }
+
+  .dm-register-card {
+    padding: 22px 17px;
+  }
+
+  .dm-register-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dm-register-field.full {
+    grid-column: auto;
+  }
+}
+/* Google registration button interaction fix */
+
+.dm-register-google {
+  position: relative;
+  z-index: 2;
+  pointer-events: auto;
+  touch-action: manipulation;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.dm-register-google:disabled {
+  pointer-events: none;
+}
+.dm-register-divider,
+.dm-register-google,
+.dm-register-note,
+.dm-register-login-link {
+  position: relative;
+  z-index: 5;
+}
+
+.dm-register-google {
+  width: 100%;
+  pointer-events: auto !important;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.dm-register-google:disabled {
+  cursor: wait;
+}

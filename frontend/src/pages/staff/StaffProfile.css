@@ -1,0 +1,897 @@
+/* =========================================================
+   CIVICFIX STAFF PROFILE
+   Staff 1 theme: light blue (design only)
+   Page #071039, cards #0f2270, border #1a3bb0, text #e6edfd,
+   soft text #afc5f8, buttons #6e92f2, accent cyan #22d3ee
+   ========================================================= */
+
+.staff-profile-page {
+  width: 100%;
+  min-height: 100%;
+  padding: 25px 28px 35px;
+  background: #ffffff;
+  color: #14224f;
+  font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
+}
+
+.staff-profile-page *,
+.staff-profile-page *::before,
+.staff-profile-page *::after {
+  box-sizing: border-box;
+}
+
+/* NO WHITE SECTION
+   1) the page always fills the screen under the header
+   2) every parent of the page is dark, so nothing light can show
+   3) anything left after the page is removed */
+
+.staff-profile-page {
+  min-height: calc(100vh - 93px);
+}
+
+*:has(.staff-profile-page) {
+  background: #ffffff !important;
+}
+
+.staff-profile-page ~ * {
+  display: none !important;
+}
+
+.staff-profile-page button:focus-visible,
+.staff-profile-page a:focus-visible {
+  outline: 2px solid #6e92f2;
+  outline-offset: 2px;
+}
+
+/* PAGE HEADER */
+
+.staff-profile-page-header {
+  margin-bottom: 25px;
+  animation: staff-profile-fade-up .6s ease backwards;
+}
+
+.staff-profile-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 13px;
+  color: #2e5de6;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.staff-profile-breadcrumb i {
+  font-size: 13px;
+}
+
+.staff-profile-breadcrumb span:nth-child(2) {
+  color: #9fb0dd;
+}
+
+.staff-profile-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.staff-profile-title-row h1 {
+  margin: 0;
+  color: #14224f;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 29px;
+  font-weight: 800;
+  letter-spacing: -0.8px;
+}
+
+.staff-profile-title-row p {
+  margin: 7px 0 0;
+  color: #4a5d8f;
+  font-size: 13px;
+}
+
+.staff-profile-refresh {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-width: 110px;
+  height: 42px;
+  padding: 0 16px;
+  border: 1px solid rgba(46,93,230,.3);
+  border-radius: 9px;
+  background: transparent;
+  color: #2e5de6;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+.staff-profile-refresh:hover {
+  background: #2e5de6;
+  border-color: #6e92f2;
+  color: #ffffff;
+  box-shadow: 0 5px 14px rgba(110, 146, 242, .3);
+}
+
+.staff-profile-refresh:disabled {
+  opacity: .65;
+  cursor: not-allowed;
+}
+
+.staff-profile-rotating {
+  animation: staff-profile-spin .8s linear infinite;
+}
+
+@keyframes staff-profile-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* MAIN TWO COLUMN STRUCTURE */
+
+.staff-profile-layout {
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr);
+  align-items: start;
+  gap: 25px;
+}
+
+/* LEFT PROFILE CARD */
+
+.staff-profile-sidebar-card {
+  position: sticky;
+  top: 20px;
+  min-width: 0;
+  padding: 30px 24px 20px;
+  border: 1px solid #c7d5f8;
+  border-top: 3px solid #6e92f2;
+  border-radius: 13px;
+  background: #e6edfd;
+  box-shadow: 0 10px 28px rgba(46,93,230,0.158);
+  text-align: center;
+  animation: staff-profile-fade-up .6s ease .1s backwards;
+}
+
+.staff-profile-avatar-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.staff-profile-avatar,
+.staff-profile-avatar-image {
+  display: grid;
+  width: 142px;
+  height: 142px;
+  place-items: center;
+  border: 4px solid #c7d5f8;
+  border-radius: 50%;
+  background: #2e5de6;
+  color: #ffffff;
+  box-shadow: 0 0 0 8px rgba(110,146,242,.08);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 37px;
+  font-weight: 800;
+  animation: staff-profile-ring 4.5s ease-in-out infinite;
+}
+
+.staff-profile-avatar-image {
+  object-fit: cover;
+}
+
+.staff-profile-sidebar-card > h2 {
+  margin: 0 0 10px;
+  color: #14224f;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 21px;
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+
+.staff-profile-role-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 65px;
+  padding: 7px 17px;
+  border-radius: 25px;
+  background: rgba(110, 146, 242, .16);
+  color: #2e5de6;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: capitalize;
+}
+
+.staff-profile-active-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  width: fit-content;
+  margin: 12px auto 19px;
+  padding: 8px 15px;
+  border-radius: 30px;
+  background: rgba(34,197,94,.18);
+  color: #15803d;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.staff-profile-active-badge span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #6e92f2;
+  animation: staff-profile-pulse 2s ease-out infinite;
+}
+
+.staff-profile-active-badge.inactive {
+  background: rgba(239, 68, 68, .18);
+  color: #dc2626;
+}
+
+.staff-profile-active-badge.inactive span {
+  background: #ef4444;
+  animation: none;
+}
+
+.staff-profile-sidebar-divider {
+  height: 1px;
+  margin: 5px 0 7px;
+  background: rgba(46,93,230,.14);
+}
+
+.staff-profile-sidebar-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.staff-profile-sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 16px 4px;
+  border-bottom: 1px solid rgba(46,93,230,.14);
+  text-align: left;
+  transition: transform .2s ease;
+}
+
+.staff-profile-sidebar-item:hover {
+  transform: translateX(3px);
+}
+
+.staff-profile-sidebar-item:last-child {
+  border-bottom: 0;
+}
+
+.staff-profile-sidebar-icon {
+  display: grid;
+  flex: 0 0 30px;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  color: #2e5de6;
+  font-size: 18px;
+}
+
+.staff-profile-sidebar-item > div:last-child {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.staff-profile-sidebar-item span {
+  color: #6b7dad;
+  font-size: 11px;
+}
+
+.staff-profile-sidebar-item strong {
+  color: #14224f;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+/* RIGHT CONTENT */
+
+.staff-profile-content {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 17px;
+}
+
+/* TABS */
+
+.staff-profile-tabs {
+  display: flex;
+  align-items: stretch;
+  min-height: 61px;
+  overflow: hidden;
+  border: 1px solid #c7d5f8;
+  border-radius: 11px;
+  background: #e6edfd;
+  box-shadow: 0 6px 18px rgba(46,93,230,0.135);
+  animation: staff-profile-fade-up .6s ease .18s backwards;
+}
+
+.staff-profile-tab,
+.staff-profile-tab-static {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-width: 0;
+  padding: 12px 15px;
+  color: #4a5d8f;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.staff-profile-tab {
+  position: relative;
+  border: 0;
+  background: transparent;
+  cursor: default;
+}
+
+.staff-profile-tab i,
+.staff-profile-tab-static i {
+  font-size: 16px;
+}
+
+.staff-profile-tab.active {
+  background: rgba(110,146,242,.14);
+  color: #2e5de6;
+}
+
+.staff-profile-tab.active::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  background: #6e92f2;
+  content: "";
+}
+
+.staff-profile-tab-static {
+  color: #4a5d8f;
+}
+
+/* INFORMATION CARDS */
+
+.staff-profile-info-card {
+  overflow: hidden;
+  border: 1px solid #c7d5f8;
+  border-radius: 12px;
+  background: #e6edfd;
+  box-shadow: 0 8px 22px rgba(46,93,230,0.135);
+  scroll-margin-top: 20px;
+  animation: staff-profile-fade-up .6s ease backwards;
+}
+
+.staff-profile-content > .staff-profile-info-card:nth-of-type(1) { animation-delay: .26s; }
+.staff-profile-content > .staff-profile-info-card:nth-of-type(2) { animation-delay: .34s; }
+.staff-profile-content > .staff-profile-info-card:nth-of-type(3) { animation-delay: .42s; }
+.staff-profile-content > .staff-profile-info-card:nth-of-type(n+4) { animation-delay: .5s; }
+
+.staff-profile-card-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 53px;
+  padding: 12px 19px;
+  background: rgba(230,237,253,0.7);
+}
+
+.staff-profile-heading-icon {
+  display: grid;
+  flex: 0 0 25px;
+  width: 25px;
+  height: 25px;
+  place-items: center;
+  color: #2e5de6;
+  font-size: 17px;
+}
+
+.staff-profile-card-heading h3 {
+  margin: 0;
+  color: #14224f;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.staff-profile-info-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: center;
+  padding: 20px 12px;
+}
+
+.staff-profile-info-item {
+  display: flex;
+  min-width: 0;
+  min-height: 52px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 17px;
+  border-right: 1px solid rgba(46,93,230,.14);
+}
+
+.staff-profile-info-item:last-child {
+  border-right: 0;
+}
+
+.staff-profile-info-label {
+  color: #6b7dad;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.staff-profile-info-value {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+  color: #14224f;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.staff-profile-info-value i {
+  flex: 0 0 auto;
+  color: #2e5de6;
+  font-size: 14px;
+}
+
+/* ADDRESS SECTION */
+
+#staff-address-information .staff-profile-info-grid {
+  grid-template-columns: .8fr .8fr 1.8fr;
+}
+
+/* ACCOUNT SECTION */
+
+#staff-account-information .staff-profile-info-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+#staff-account-information .staff-profile-info-item {
+  border-bottom: 1px solid rgba(46,93,230,.14);
+  padding-top: 9px;
+  padding-bottom: 9px;
+}
+
+#staff-account-information .staff-profile-info-item:nth-child(2n) {
+  border-right: 0;
+}
+
+#staff-account-information .staff-profile-info-item:last-child {
+  border-bottom: 0;
+}
+
+/* NOTICE */
+
+.staff-profile-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  padding: 18px;
+  border: 1px solid rgba(110,146,242,.3);
+  border-radius: 11px;
+  background: rgba(110,146,242,.08);
+  animation: staff-profile-fade-up .6s ease .58s backwards;
+}
+
+.staff-profile-notice-icon {
+  display: grid;
+  flex: 0 0 35px;
+  width: 35px;
+  height: 35px;
+  place-items: center;
+  border-radius: 9px;
+  background: rgba(110,146,242,.16);
+  color: #2e5de6;
+  font-size: 15px;
+}
+
+.staff-profile-notice h4 {
+  margin: 1px 0 6px;
+  color: #14224f;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.staff-profile-notice p {
+  margin: 0;
+  color: #4a5d8f;
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+/* ERROR AND LOADING */
+
+.staff-profile-loading,
+.staff-profile-error {
+  display: flex;
+  min-height: 350px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.staff-profile-loading p,
+.staff-profile-error p {
+  color: #4a5d8f;
+  font-size: 12px;
+}
+
+.staff-profile-spinner {
+  width: 35px;
+  height: 35px;
+  border: 3px solid rgba(46,93,230,.2);
+  border-top-color: #6e92f2;
+  border-radius: 50%;
+  animation: staff-profile-spin .8s linear infinite;
+}
+
+.staff-profile-error > i {
+  margin-bottom: 12px;
+  color: #dc2626;
+  font-size: 30px;
+}
+
+.staff-profile-error h3 {
+  margin: 0;
+  color: #14224f;
+  font-size: 17px;
+}
+
+.staff-profile-retry {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  padding: 10px 17px;
+  border: 0;
+  border-radius: 8px;
+  background: #2e5de6;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .2s ease;
+}
+
+.staff-profile-retry:hover {
+  background: #2450c8;
+}
+
+.staff-profile-inline-error {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid rgba(252, 165, 165, .35);
+  border-radius: 8px;
+  background: rgba(239, 68, 68, .12);
+  color: #dc2626;
+  font-size: 11px;
+}
+
+/* MOVING ANIMATIONS */
+
+@keyframes staff-profile-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+}
+
+@keyframes staff-profile-ring {
+  0%, 100% { box-shadow: 0 0 0 8px rgba(110,146,242,.08); }
+  50% { box-shadow: 0 0 0 14px rgba(110,146,242,.12); }
+}
+
+@keyframes staff-profile-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(110,146,242,.55); }
+  70% { box-shadow: 0 0 0 7px rgba(110,146,242,0); }
+  100% { box-shadow: 0 0 0 0 rgba(110,146,242,0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .staff-profile-page *,
+  .staff-profile-page *::before,
+  .staff-profile-page *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 1150px) {
+  .staff-profile-layout {
+    grid-template-columns: 260px minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .staff-profile-sidebar-card {
+    padding: 25px 18px 18px;
+  }
+
+  .staff-profile-info-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 17px;
+  }
+
+  .staff-profile-info-item:nth-child(2) {
+    border-right: 0;
+  }
+
+  .staff-profile-info-item:nth-child(3),
+  .staff-profile-info-item:nth-child(4) {
+    border-top: 1px solid rgba(46,93,230,.14);
+    padding-top: 14px;
+  }
+
+  #staff-address-information .staff-profile-info-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #staff-address-information .staff-profile-info-item:last-child {
+    grid-column: 1 / -1;
+    border-top: 1px solid rgba(46,93,230,.14);
+    border-right: 0;
+    padding-top: 14px;
+  }
+}
+
+@media (max-width: 850px) {
+  .staff-profile-page {
+    padding: 22px 18px 30px;
+  }
+
+  .staff-profile-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .staff-profile-sidebar-card {
+    position: static;
+    display: grid;
+    grid-template-columns: 100px minmax(0, 1fr);
+    align-items: center;
+    column-gap: 18px;
+    padding: 20px;
+    text-align: left;
+  }
+
+  .staff-profile-avatar-wrapper {
+    grid-row: 1 / 4;
+    margin: 0;
+  }
+
+  .staff-profile-avatar,
+  .staff-profile-avatar-image {
+    width: 90px;
+    height: 90px;
+    font-size: 27px;
+  }
+
+  .staff-profile-sidebar-card > h2 {
+    margin: 0;
+  }
+
+  .staff-profile-role-badge {
+    width: fit-content;
+  }
+
+  .staff-profile-active-badge {
+    margin: 0;
+  }
+
+  .staff-profile-sidebar-divider {
+    grid-column: 1 / -1;
+    width: 100%;
+    margin: 17px 0 0;
+  }
+
+  .staff-profile-sidebar-details {
+    grid-column: 1 / -1;
+  }
+
+  .staff-profile-sidebar-item {
+    padding: 12px 3px;
+  }
+}
+
+@media (max-width: 600px) {
+  .staff-profile-page {
+    padding: 18px 12px 25px;
+    min-height: calc(100vh - 79px);
+  }
+
+  .staff-profile-title-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .staff-profile-title-row h1 {
+    font-size: 24px;
+  }
+
+  .staff-profile-refresh {
+    width: 100%;
+  }
+
+  .staff-profile-tabs {
+    min-height: 53px;
+  }
+
+  .staff-profile-tab,
+  .staff-profile-tab-static {
+    gap: 6px;
+    padding: 9px 5px;
+    font-size: 9px;
+  }
+
+  .staff-profile-tab i,
+  .staff-profile-tab-static i {
+    font-size: 12px;
+  }
+
+  .staff-profile-info-grid,
+  #staff-address-information .staff-profile-info-grid,
+  #staff-account-information .staff-profile-info-grid {
+    grid-template-columns: 1fr;
+    padding: 8px 15px;
+  }
+
+  .staff-profile-info-item,
+  .staff-profile-info-item:nth-child(2),
+  .staff-profile-info-item:nth-child(3),
+  .staff-profile-info-item:nth-child(4),
+  #staff-address-information .staff-profile-info-item:last-child,
+  #staff-account-information .staff-profile-info-item {
+    grid-column: auto;
+    min-height: 58px;
+    padding: 10px 3px;
+    border-right: 0;
+    border-bottom: 1px solid rgba(46,93,230,.14);
+    border-top: 0;
+  }
+
+  .staff-profile-info-item:last-child {
+    border-bottom: 0;
+  }
+
+  .staff-profile-card-heading {
+    padding: 11px 14px;
+  }
+
+  .staff-profile-card-heading h3 {
+    font-size: 12px;
+  }
+
+  .staff-profile-info-label {
+    font-size: 10px;
+  }
+
+  .staff-profile-info-value {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 420px) {
+  .staff-profile-sidebar-card {
+    grid-template-columns: 75px minmax(0, 1fr);
+    column-gap: 12px;
+    padding: 15px;
+  }
+
+  .staff-profile-avatar,
+  .staff-profile-avatar-image {
+    width: 70px;
+    height: 70px;
+    font-size: 22px;
+  }
+
+  .staff-profile-sidebar-card > h2 {
+    font-size: 17px;
+  }
+
+  .staff-profile-tab,
+  .staff-profile-tab-static {
+    flex-direction: column;
+    gap: 4px;
+    font-size: 8px;
+  }
+}
+
+/* ============================================
+   CIVICFIX STAFF PROFILE
+   MATCH STAFF DASHBOARD DARK NAVY + CYAN THEME
+   RIGHT CONTENT (replaces the old blue override)
+============================================ */
+
+.staff-profile-content {
+  --staff-profile-primary: #2e5de6;
+  --staff-profile-primary-dark: #4f7ae0;
+  --staff-profile-primary-light: rgba(110,146,242,0.14);
+  --staff-profile-primary-soft: #e6edfd;
+}
+
+/* PROFILE TABS */
+
+.staff-profile-content .staff-profile-tabs {
+  border-color: #c7d5f8 !important;
+}
+
+.staff-profile-content .staff-profile-tab.active {
+  background: rgba(110,146,242,0.14) !important;
+  color: #2e5de6 !important;
+}
+
+.staff-profile-content .staff-profile-tab.active::after {
+  background: #6e92f2 !important;
+}
+
+.staff-profile-content .staff-profile-tab:hover {
+  color: #14224f !important;
+}
+
+/* INFORMATION CARD HEADINGS */
+
+.staff-profile-content .staff-profile-card-heading {
+  background: rgba(230,237,253,0.7) !important;
+}
+
+.staff-profile-content .staff-profile-heading-icon {
+  color: #2e5de6 !important;
+}
+
+/* INFORMATION CARD BORDERS */
+
+.staff-profile-content .staff-profile-info-card {
+  border-color: #c7d5f8 !important;
+}
+
+/* INFORMATION ICONS */
+
+.staff-profile-content .staff-profile-info-value i {
+  color: #2e5de6 !important;
+}
+
+/* NOTICE CARD */
+
+.staff-profile-content .staff-profile-notice {
+  background: rgba(110,146,242,0.08) !important;
+  border-color: rgba(110,146,242,0.3) !important;
+}
+
+.staff-profile-content .staff-profile-notice-icon {
+  background: rgba(110,146,242,0.16) !important;
+  color: #2e5de6 !important;
+}
+
+/* RIGHT CONTENT CARD SHADOW */
+
+.staff-profile-content .staff-profile-info-card,
+.staff-profile-content .staff-profile-tabs,
+.staff-profile-content .staff-profile-notice {
+  box-shadow: 0 8px 22px rgba(46,93,230,0.135) !important;
+}

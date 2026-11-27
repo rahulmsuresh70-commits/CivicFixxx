@@ -1,0 +1,37 @@
+/* CivicFix public design system – scoped so citizen/app pages are not affected */
+.public-site,.public-header,.public-footer{
+  --color-primary:#1749b8;--color-primary-dark:#0c2f7a;--color-royal:#2563eb;--color-sky:#38bdf8;
+  --color-navy:#0f1f3d;--color-text:#0f1f3d;--color-text-muted:#516186;
+  --color-bg:#ffffff;--color-bg-soft:#f3f7fe;--color-border:#dbe5f5;
+  --shadow-sm:0 1px 3px rgba(15,31,61,.08);--shadow-md:0 8px 24px rgba(23,73,184,.10);--shadow-lg:0 24px 56px rgba(15,31,61,.18);
+  --radius-sm:10px;--radius-md:14px;--radius-lg:20px;--transition:.25s cubic-bezier(.4,0,.2,1);
+  --font-heading:'Inter','Segoe UI',system-ui,sans-serif;--font-body:'Inter','Segoe UI',system-ui,sans-serif;
+}
+.public-site{background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);overflow-x:hidden}
+.public-site *,.public-site *::before,.public-site *::after{box-sizing:border-box}
+.public-site img{max-width:100%;display:block}
+.container{width:min(1200px,100% - 48px);margin-inline:auto}
+.section{padding:96px 0}
+.eyebrow{display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--color-royal);margin-bottom:14px}
+.section-heading{max-width:680px;margin:0 auto 52px;text-align:center}
+.section-heading h2,.workflow-intro h2{font-family:var(--font-heading);font-size:clamp(1.9rem,3.4vw,2.7rem);line-height:1.15;letter-spacing:-.02em;margin:0 0 16px;color:var(--color-navy)}
+.section-heading p,.workflow-intro p{color:var(--color-text-muted);line-height:1.7;margin:0}
+.button{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:12px 22px;border-radius:12px;font-weight:600;font-size:.95rem;text-decoration:none;border:1.5px solid transparent;cursor:pointer;transition:transform var(--transition),box-shadow var(--transition),background var(--transition),color var(--transition)}
+.button:hover{transform:translateY(-2px)}.button:active{transform:translateY(0) scale(.98)}
+.button svg{transition:transform var(--transition)}.button:hover svg{transform:translateX(4px)}
+.button-large{padding:15px 28px;font-size:1rem}
+.button-primary{background:linear-gradient(135deg,var(--color-royal),var(--color-primary));color:#fff;box-shadow:0 8px 20px rgba(23,73,184,.28)}
+.button-primary:hover{box-shadow:0 12px 28px rgba(23,73,184,.38)}
+.button-secondary{background:#fff;color:var(--color-primary);border-color:var(--color-border)}
+.button-secondary:hover{border-color:var(--color-royal);background:var(--color-bg-soft)}
+.button-white{background:#fff;color:var(--color-primary-dark);box-shadow:0 8px 20px rgba(0,0,0,.18)}
+.public-site :focus-visible{outline:3px solid var(--color-sky);outline-offset:3px}
+/* reveal on scroll (class added by JS only, so content never stays hidden) */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease;transition-delay:var(--d,0s)}
+.reveal.is-visible{opacity:1;transform:none}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){
+  .public-site *,.public-site *::before,.public-site *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+}
+@media (max-width:640px){.section{padding:64px 0}.container{width:calc(100% - 32px)}}

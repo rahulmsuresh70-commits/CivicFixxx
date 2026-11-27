@@ -1,0 +1,150 @@
+/* =========================================
+   STAFF SHARED LAYOUT
+========================================= */
+
+.staff-layout {
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* =========================================
+   MAIN CONTENT AREA
+========================================= */
+
+.staff-layout .staff-main {
+  min-height: 100vh;
+  margin-left: 260px;
+  width: calc(100% - 260px);
+  display: flex;
+  flex-direction: column;
+}
+
+/* =========================================
+   PERSISTENT HEADER
+========================================= */
+
+.staff-layout .staff-header {
+  position: sticky;
+  top: 0;
+  z-index: 80;
+  flex-shrink: 0;
+}
+
+/* =========================================
+   DYNAMIC CONTENT
+========================================= */
+
+.staff-layout-content {
+  flex: 1;
+  min-width: 0;
+  min-height: calc(100vh - 90px);
+  background: #F3F7F8;
+}
+
+/*
+   Child pages should use the available
+   layout width without adding another
+   sidebar or header.
+*/
+
+.staff-layout-content > * {
+  min-width: 0;
+}
+
+/* =========================================
+   SIDEBAR NAVIGATION
+========================================= */
+
+.staff-layout .staff-nav-item {
+  text-decoration: none;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+  .staff-layout .staff-sidebar {
+    transform: translateX(-100%);
+  }
+
+  .staff-layout .staff-sidebar.staff-sidebar-open {
+    transform: translateX(0);
+  }
+
+  .staff-layout .staff-main {
+    width: 100%;
+    margin-left: 0;
+  }
+
+}
+
+@media (max-width: 550px) {
+
+  .staff-layout .staff-header {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .staff-layout .staff-header-user-info {
+    display: none;
+  }
+
+  .staff-layout-content {
+    min-height: calc(100vh - 75px);
+  }
+
+}
+/* Outlet pages share this shell; child pages must not create another dashboard shell. */
+.staff-layout .staff-layout-content { min-width: 0; width: 100%; }
+.staff-layout .staff-layout-content > .staff-page-content { min-width: 0; width: 100%; }
+.staff-layout-content .staff-loading-screen { position: static; min-height: 260px; height: auto; }
+/* =========================================
+   STAFF NESTED PAGE LAYOUT FIX
+   Keep the parent StaffLayout persistent
+========================================= */
+
+.staff-layout .staff-layout-content > .staff-dashboard {
+  display: block;
+  width: 100%;
+  min-height: auto;
+}
+
+/* Hide duplicate child sidebars */
+.staff-layout .staff-layout-content .staff-sidebar {
+  display: none !important;
+}
+
+/* Hide duplicate child headers */
+.staff-layout .staff-layout-content .staff-main > .staff-header {
+  display: none !important;
+}
+
+/* Remove the child layout's sidebar offset */
+.staff-layout .staff-layout-content .staff-main {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-height: auto !important;
+  margin: 0 !important;
+}
+
+/* Make child content use the available Outlet space */
+.staff-layout .staff-layout-content .staff-page-content {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Keep loading inside the content area */
+.staff-layout .staff-layout-content .staff-loading-screen {
+  position: static !important;
+  inset: auto !important;
+  width: 100% !important;
+  min-height: 260px !important;
+  height: auto !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent !important;
+}

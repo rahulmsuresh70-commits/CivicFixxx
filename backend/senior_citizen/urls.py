@@ -1,0 +1,132 @@
+from django.urls import path
+
+from .views import (
+    SeniorCitizenRequestListCreateView,
+    SeniorCitizenRequestDetailView,
+    SeniorCitizenImageUploadView,
+    SeniorCitizenRequestActionView,
+    SeniorCitizenMessageListCreateView,
+    SeniorCitizenMessageReadView,
+    SeniorCitizenStaffListView,
+    SeniorCitizenStaffDetailView,
+    SeniorCitizenStaffMyProfileView,
+    SeniorCitizenRequestTransferView,
+    SeniorCitizenManagerDirectoryView,
+    SeniorCitizenRequestTransferHistoryView,
+    SeniorCitizenManagerProfileView,
+    SeniorCitizenCompletionVerificationView,
+    SeniorCitizenIssueReportListCreateView,
+    SeniorCitizenIssueReportActionView,
+    AdminSeniorCitizenManagerListCreateView,
+    AdminSeniorCitizenManagerDetailView,
+    SuperAdminSeniorCitizenStaffCreateView,
+    SeniorCitizenStaffStatusView,
+    
+)
+
+urlpatterns = [
+    path(
+        "",
+        SeniorCitizenRequestListCreateView.as_view(),
+        name="senior-citizen-list-create",
+    ),
+    path(
+        "<int:pk>/",
+        SeniorCitizenRequestDetailView.as_view(),
+        name="senior-citizen-detail",
+    ),
+    path(
+        "<int:request_id>/images/",
+        SeniorCitizenImageUploadView.as_view(),
+        name="senior-citizen-image-upload",
+    ),
+    path(
+        "<int:pk>/action/",
+        SeniorCitizenRequestActionView.as_view(),
+        name="senior-citizen-action",
+    ),
+    path(
+        "<int:request_id>/messages/",
+        SeniorCitizenMessageListCreateView.as_view(),
+        name="senior-citizen-messages",
+    ),
+    path(
+        "messages/<int:message_id>/read/",
+        SeniorCitizenMessageReadView.as_view(),
+        name="senior-citizen-message-read",
+    ),
+    path(
+        "staff/",
+        SeniorCitizenStaffListView.as_view(),
+        name="senior-citizen-staff-list",
+    ),
+    path(
+        "staff/my-profile/",
+        SeniorCitizenStaffMyProfileView.as_view(),
+        name="senior-citizen-staff-my-profile",
+    ),
+    path(
+        "staff/<int:staff_id>/",
+        SeniorCitizenStaffDetailView.as_view(),
+        name="senior-citizen-staff-detail",
+    ),
+    path(
+        "<int:pk>/transfer/",
+        SeniorCitizenRequestTransferView.as_view(),
+        name="senior-citizen-request-transfer",
+    ),
+    
+    path(
+        "managers/",
+        SeniorCitizenManagerDirectoryView.as_view(),
+        name="senior-citizen-manager-directory",
+    ),
+    path(
+        "<int:pk>/transfer-history/",
+        SeniorCitizenRequestTransferHistoryView.as_view(),
+        name="senior-citizen-request-transfer-history",
+    ),
+    path(
+        "manager/profile/",
+        SeniorCitizenManagerProfileView.as_view(),
+        name="senior-citizen-manager-profile",
+    ),
+    
+    path(
+        "<int:pk>/verify-completion/",
+        SeniorCitizenCompletionVerificationView.as_view(),
+        name="senior-citizen-verify-completion",
+    ),
+    path(
+        "<int:request_id>/issues/",
+        SeniorCitizenIssueReportListCreateView.as_view(),
+        name="senior-citizen-issues",
+    ),
+    path(
+        "issues/<int:report_id>/",
+        SeniorCitizenIssueReportActionView.as_view(),
+        name="senior-citizen-issue-action",
+    ),
+    
+    path(
+        "admin/managers/",
+        AdminSeniorCitizenManagerListCreateView.as_view(),
+        name="admin-senior-citizen-manager-list-create",
+    ),
+
+    path(
+        "admin/managers/<int:manager_id>/",
+        AdminSeniorCitizenManagerDetailView.as_view(),
+        name="admin-senior-citizen-manager-detail",
+    ),
+    path(
+        "admin/staff/",
+        SuperAdminSeniorCitizenStaffCreateView.as_view(),
+        name="super-admin-senior-citizen-staff-create",
+    ),
+    path(
+        "staff/<int:staff_id>/status/",
+        SeniorCitizenStaffStatusView.as_view(),
+        name="senior-citizen-staff-status",
+    ),
+]

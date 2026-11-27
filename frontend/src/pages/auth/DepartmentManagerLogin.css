@@ -1,0 +1,592 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
+/* =========================================================
+   Department Manager Login
+   Manager 1 theme: navy #071039 / #0f2270, royal blue #1a3bb0,
+   light blue #e6edfd, white cards, teal accent #14b8a6
+   ========================================================= */
+
+.dm-login-page {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #e6edfd;
+  color: #071039;
+  font-family: 'Inter', sans-serif;
+}
+
+.dm-login-page *,
+.dm-login-page *::before,
+.dm-login-page *::after {
+  box-sizing: border-box;
+}
+
+/* Soft background shapes */
+
+.dm-login-background {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.dm-login-orb {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.dm-orb-one {
+  top: -230px;
+  right: -120px;
+  width: 600px;
+  height: 600px;
+  background: rgba(26, 59, 176, .1);
+}
+
+.dm-orb-two {
+  bottom: -300px;
+  left: -150px;
+  width: 560px;
+  height: 560px;
+  background: rgba(20, 184, 166, .12);
+}
+
+.dm-login-container {
+  position: relative;
+  z-index: 1;
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+/* Header */
+
+.dm-login-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 95px;
+}
+
+.dm-login-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #071039;
+  text-decoration: none;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.dm-login-brand > span:last-child {
+  line-height: 1.2;
+}
+
+.dm-login-brand > span:last-child > span {
+  color: #0f766e;
+}
+
+.dm-login-brand small {
+  display: block;
+  margin-top: 5px;
+  color: #3b4a82;
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+.dm-brand-icon {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  background: #1a3bb0;
+  color: #ffffff;
+  box-shadow: 0 8px 18px rgba(26, 59, 176, .28);
+}
+
+.dm-back-home {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 14px;
+  border: 1px solid #cfdbf7;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #3b4a82;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color .2s, border-color .2s;
+}
+
+.dm-back-home:hover {
+  color: #1a3bb0;
+  border-color: #2e5de6;
+}
+
+/* One joined panel: sign in card + navy information panel */
+
+.dm-login-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: stretch;
+  gap: 0;
+  max-width: 1040px;
+  margin: 40px auto 55px;
+  overflow: hidden;
+  border: 1px solid #cfdbf7;
+  border-radius: 24px;
+  background: #ffffff;
+  box-shadow: 0 24px 60px rgba(7, 16, 57, .14);
+}
+
+/* Sign in card */
+
+.dm-login-card {
+  padding: 46px 44px;
+  background: #ffffff;
+}
+
+.dm-login-card-heading {
+  margin-bottom: 30px;
+}
+
+.dm-login-icon {
+  display: grid;
+  place-items: center;
+  width: 53px;
+  height: 53px;
+  margin-bottom: 22px;
+  border-radius: 16px;
+  background: #e6edfd;
+  color: #1a3bb0;
+}
+
+.dm-login-page .dm-eyebrow {
+  display: block;
+  margin-bottom: 11px;
+  color: #0f766e;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.dm-login-card-heading h1 {
+  margin: 0;
+  color: #071039;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.dm-login-card-heading p {
+  margin: 11px 0 0;
+  color: #3b4a82;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* Form */
+
+.dm-login-form {
+  display: grid;
+  gap: 21px;
+}
+
+.dm-form-group {
+  display: grid;
+  gap: 9px;
+}
+
+.dm-form-group label {
+  color: #071039;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.dm-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-height: 51px;
+  padding: 0 14px;
+  border: 1px solid #cfdbf7;
+  border-radius: 11px;
+  background: #ffffff;
+  color: #6b7bb0;
+  transition: border-color .2s, box-shadow .2s;
+}
+
+.dm-input-wrapper:focus-within {
+  border-color: #2e5de6;
+  color: #1a3bb0;
+  box-shadow: 0 0 0 4px rgba(46, 93, 230, .15);
+}
+
+.dm-input-wrapper input {
+  width: 100%;
+  min-width: 0;
+  height: 49px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #071039;
+  font-family: inherit;
+  font-size: 13px;
+}
+
+.dm-input-wrapper input::placeholder {
+  color: #6b7bb0;
+}
+
+.dm-password-toggle {
+  display: grid;
+  place-items: center;
+  padding: 5px;
+  border: 0;
+  background: transparent;
+  color: #6b7bb0;
+  cursor: pointer;
+}
+
+.dm-password-toggle:hover:not(:disabled) {
+  color: #1a3bb0;
+}
+
+.dm-submit-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  min-height: 52px;
+  margin-top: 7px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 11px;
+  background: #1a3bb0;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(26, 59, 176, .25);
+  transition: background .2s, transform .2s;
+}
+
+.dm-submit-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  background: #0f2270;
+}
+
+.dm-submit-button:disabled {
+  cursor: wait;
+  opacity: .75;
+}
+
+.dm-login-page button:focus-visible,
+.dm-login-page a:focus-visible {
+  outline: 2px solid #14b8a6;
+  outline-offset: 2px;
+}
+
+.dm-loading-icon {
+  animation: dm-login-spin .9s linear infinite;
+}
+
+@keyframes dm-login-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Error message */
+
+.dm-error-message {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding: 13px;
+  border: 1px solid #fecaca;
+  border-radius: 10px;
+  background: #fef2f2;
+  color: #991b1b;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.dm-error-message svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* Google login divider */
+
+.dm-login-divider {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 23px 0 18px;
+}
+
+.dm-login-divider span {
+  flex: 1;
+  height: 1px;
+  background: #cfdbf7;
+}
+
+.dm-login-divider p {
+  margin: 0;
+  color: #6b7bb0;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+/* Google login button */
+
+.dm-google-button {
+  width: 100%;
+  min-height: 52px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 18px;
+  border: 1px solid #cfdbf7;
+  border-radius: 11px;
+  background: #ffffff;
+  color: #071039;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 650;
+  cursor: pointer;
+  transition: all .2s ease;
+}
+
+.dm-google-button:hover:not(:disabled) {
+  background: #e6edfd;
+  border-color: #afc5f8;
+  transform: translateY(-1px);
+}
+
+.dm-google-button:disabled {
+  opacity: .65;
+  cursor: not-allowed;
+}
+
+.dm-google-button svg {
+  flex-shrink: 0;
+}
+
+/* Security note */
+
+.dm-login-security {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid #e3eafc;
+  color: #3b4a82;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.dm-login-security svg {
+  flex-shrink: 0;
+  color: #14b8a6;
+}
+
+/* Navy information panel */
+
+.dm-login-information {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  padding: 52px 46px;
+  background: #0f2270;
+  color: #ffffff;
+}
+
+.dm-login-information::before {
+  content: '';
+  position: absolute;
+  top: -120px;
+  right: -120px;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  background: rgba(175, 197, 248, .07);
+  pointer-events: none;
+}
+
+.dm-login-information::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 4px;
+  background: #14b8a6;
+}
+
+.dm-login-information > * {
+  position: relative;
+}
+
+.dm-info-label {
+  color: #14b8a6;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.dm-login-information h2 {
+  margin: 18px 0;
+  color: #ffffff;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(28px, 3vw, 38px);
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: -1.2px;
+}
+
+.dm-login-information > p {
+  max-width: 410px;
+  margin: 0;
+  color: #afc5f8;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.dm-feature-list {
+  display: grid;
+  gap: 22px;
+  margin-top: 36px;
+}
+
+.dm-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.dm-feature-item > span {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 43px;
+  height: 43px;
+  border: 1px solid rgba(20, 184, 166, .4);
+  border-radius: 13px;
+  background: rgba(20, 184, 166, .16);
+  color: #99f6e4;
+}
+
+.dm-feature-item strong {
+  display: block;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.dm-feature-item small {
+  display: block;
+  margin-top: 5px;
+  color: #afc5f8;
+  font-size: 11px;
+}
+
+/* Footer */
+
+.dm-login-footer {
+  padding: 22px 0;
+  border-top: 1px solid #cfdbf7;
+  color: #3b4a82;
+  text-align: center;
+  font-size: 11px;
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+  .dm-login-content {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 560px;
+    margin-top: 30px;
+  }
+
+  .dm-login-information {
+    padding: 40px 34px 44px;
+  }
+
+  .dm-login-information h2 {
+    font-size: 30px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 520px) {
+  .dm-login-container {
+    width: calc(100% - 30px);
+  }
+
+  .dm-login-header {
+    min-height: 76px;
+  }
+
+  .dm-login-brand {
+    font-size: 19px;
+  }
+
+  .dm-brand-icon {
+    width: 41px;
+    height: 41px;
+  }
+
+  .dm-back-home {
+    padding: 8px 11px;
+    font-size: 11px;
+  }
+
+  .dm-login-content {
+    margin: 22px auto 35px;
+    border-radius: 18px;
+  }
+
+  .dm-login-card {
+    padding: 28px 20px;
+  }
+
+  .dm-login-card-heading h1 {
+    font-size: 27px;
+  }
+
+  .dm-login-information {
+    padding: 32px 22px 36px;
+  }
+
+  .dm-login-information h2 {
+    font-size: 26px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dm-loading-icon {
+    animation-duration: 2s;
+  }
+
+  .dm-submit-button,
+  .dm-google-button {
+    transition: none;
+  }
+}

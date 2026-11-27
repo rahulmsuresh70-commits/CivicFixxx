@@ -1,0 +1,315 @@
+
+/* ==========================================
+   CIVICFIX — LOCATION MAP
+   Shared by Submit Complaint and
+   Senior Citizen Assistance
+   ========================================== */
+
+.cfx-map-wrap {
+  width: 100%;
+  margin-top: 20px;
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid #e5eaf2;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(24, 39, 75, 0.04);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Map heading */
+
+.cfx-map-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.cfx-map-heading > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #172b4d;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.cfx-map-heading > span svg {
+  flex-shrink: 0;
+  color: #435cf5;
+}
+
+.cfx-map-heading a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 9px 13px;
+  border: 1px solid #dce4ff;
+  border-radius: 9px;
+  background: #f4f6ff;
+  color: #435cf5;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.cfx-map-heading a:hover {
+  background: #e9edff;
+  border-color: #b9c5ff;
+  transform: translateY(-1px);
+}
+
+.cfx-map-heading a:focus-visible {
+  outline: 3px solid rgba(67, 92, 245, 0.25);
+  outline-offset: 3px;
+}
+
+/* Map iframe */
+
+.cfx-map-wrap iframe {
+  display: block;
+  width: 100%;
+  height: 320px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #f1f5f9;
+}
+
+/* Empty map state */
+
+.cfx-map-empty {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  margin-top: 18px;
+  padding: 18px;
+  box-sizing: border-box;
+  border: 1px dashed #cbd5e1;
+  border-radius: 12px;
+  background: #f8faff;
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.cfx-map-empty svg {
+  flex-shrink: 0;
+  color: #435cf5;
+}
+
+/* Coordinate editor */
+
+.cfx-coordinate-editor {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+  padding: 16px;
+  border: 1px solid #e7ecf5;
+  border-radius: 12px;
+  background: #f8faff;
+}
+
+.cfx-coordinate-editor-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  grid-column: 1 / -1;
+  color: #475569;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.cfx-coordinate-editor-title svg {
+  flex-shrink: 0;
+  color: #435cf5;
+}
+
+.cfx-coordinate-editor label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
+  color: #475569;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.cfx-coordinate-editor input {
+  width: 100%;
+  min-width: 0;
+  min-height: 42px;
+  padding: 10px 12px;
+  box-sizing: border-box;
+  border: 1px solid #dbe3ef;
+  border-radius: 9px;
+  outline: none;
+  background: #ffffff;
+  color: #172b4d;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.cfx-coordinate-editor input:hover {
+  border-color: #aebdf8;
+}
+
+.cfx-coordinate-editor input:focus {
+  border-color: #435cf5;
+  box-shadow: 0 0 0 3px rgba(67, 92, 245, 0.12);
+}
+
+/* Browser number input controls */
+
+.cfx-coordinate-editor input[type="number"] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.cfx-coordinate-editor input[type="number"]::-webkit-inner-spin-button,
+.cfx-coordinate-editor input[type="number"]::-webkit-outer-spin-button {
+  margin: 0;
+  -webkit-appearance: none;
+}
+
+/* Location accuracy notice */
+
+.cfx-map-note {
+  margin: 14px 0 0;
+  padding: 0;
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+/* ==========================================
+   RESPONSIVE LAYOUT
+   ========================================== */
+
+/* Tablets and smaller laptops */
+
+@media (max-width: 768px) {
+  .cfx-map-wrap {
+    margin-top: 16px;
+    padding: 16px;
+    border-radius: 14px;
+  }
+
+  .cfx-map-heading {
+    align-items: flex-start;
+  }
+
+  .cfx-map-wrap iframe {
+    height: 280px;
+  }
+
+  .cfx-coordinate-editor {
+    gap: 12px;
+    padding: 13px;
+  }
+}
+
+/* Mobile phones */
+
+@media (max-width: 480px) {
+  .cfx-map-wrap {
+    padding: 12px;
+    border-radius: 12px;
+  }
+
+  .cfx-map-heading {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .cfx-map-heading > span {
+    font-size: 14px;
+  }
+
+  .cfx-map-heading a {
+    align-self: flex-start;
+    max-width: 100%;
+    padding: 9px 11px;
+    font-size: 11px;
+  }
+
+  .cfx-map-wrap iframe {
+    height: 240px;
+    border-radius: 9px;
+  }
+
+  .cfx-coordinate-editor {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .cfx-coordinate-editor-title {
+    grid-column: auto;
+  }
+
+  .cfx-coordinate-editor input {
+    min-height: 44px;
+  }
+
+  .cfx-map-empty {
+    align-items: flex-start;
+    padding: 14px;
+    font-size: 12px;
+  }
+
+  .cfx-map-note {
+    font-size: 11px;
+    line-height: 1.7;
+  }
+}
+
+/* Reduced motion accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .cfx-map-heading a,
+  .cfx-coordinate-editor input {
+    transition: none;
+  }
+
+  .cfx-map-heading a:hover {
+    transform: none;
+  }
+}
+
+.cfx-click-map {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  min-height: 320px;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #e8edf3;
+}
+
+.cfx-click-map .leaflet-container {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  background: #e8edf3;
+}
+
+.cfx-click-map .leaflet-tile {
+  max-width: none !important;
+}

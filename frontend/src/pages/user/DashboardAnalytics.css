@@ -1,0 +1,197 @@
+/* ==========================================================================
+   Live analytics widgets · Navy + Royal Blue theme (orange as chart accent)
+   ========================================================================== */
+
+.cfa {
+  --cfa-blue: #2563eb;
+  --cfa-orange: #f59e0b;
+  --cfa-line: #e2e8f0;
+  --cfa-ease: cubic-bezier(.4, 0, .2, 1);
+  margin: 0 0 20px;
+}
+
+.cfa-head {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  gap: 16px; margin-bottom: 14px;
+}
+.cfa-head h2 { margin: 0; color: #0f172a; font: 600 17px/1.3 Inter, sans-serif; letter-spacing: -.01em; }
+.cfa-head p { margin: 4px 0 0; color: #64748b; font-size: 12.5px; line-height: 1.5; }
+.cfa-tools { display: flex; align-items: center; flex-wrap: wrap; justify-content: flex-end; gap: 8px; }
+
+.cfa-live {
+  display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px;
+  border: 1px solid #e2e8f0; border-radius: 999px; background: #fff;
+  color: #64748b; font-size: 12px; font-weight: 600; white-space: nowrap;
+}
+.cfa-live small { color: #94a3b8; font-size: 11px; font-weight: 500; font-variant-numeric: tabular-nums; }
+.cfa-live i { width: 8px; height: 8px; border-radius: 50%; background: #94a3b8; }
+.cfa-live.is-live { color: #15803d; border-color: #bbf7d0; background: #f0fdf4; }
+.cfa-live.is-live i { background: #16a34a; animation: cfa-pulse 1.8s ease-out infinite; }
+
+.cfa-chip {
+  display: inline-flex; align-items: center; gap: 6px; min-height: 32px; padding: 0 12px;
+  border: 1px solid #e2e8f0; border-radius: 8px; background: #fff; color: #334155;
+  font-size: 12px !important; font-weight: 600; cursor: pointer;
+  transition: background .15s ease-out, border-color .15s ease-out, color .15s ease-out, transform .1s ease;
+}
+.cfa-chip:hover:not(:disabled) { border-color: #bfdbfe; background: #eff6ff; color: #2563eb; }
+.cfa-chip:active:not(:disabled) { transform: scale(.97); }
+.cfa-chip:disabled { opacity: .6; cursor: wait; }
+.cfa-chip:focus-visible, .cfa-segment button:focus-visible { outline: 3px solid rgba(37, 99, 235, .35); outline-offset: 2px; }
+.cfa-spin { display: inline-block; animation: cfa-rotate .8s linear infinite; }
+
+/* Grid: 12 columns, fewer on smaller screens */
+.cfa-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px; }
+.cfa-span-3 { grid-column: span 3; }
+.cfa-span-4 { grid-column: span 4; }
+.cfa-span-6 { grid-column: span 6; }
+.cfa-order-1 { order: 1; } .cfa-order-3 { order: 2; } .cfa-order-2 { order: 3; }
+.cfa-order-4 { order: 4; } .cfa-order-5 { order: 5; } .cfa-order-6 { order: 6; }
+
+.cfa-card {
+  min-width: 0; padding: 18px 20px 20px; border: 1px solid #e2e8f0; border-radius: 12px;
+  background: #fff; box-shadow: 0 1px 3px rgba(15, 23, 42, .08);
+  animation: cfa-rise .3s var(--cfa-ease) both;
+  transition: transform .2s var(--cfa-ease), box-shadow .2s var(--cfa-ease), border-color .2s var(--cfa-ease);
+}
+.cfa-card:hover { transform: translateY(-2px); border-color: #bfdbfe; box-shadow: 0 8px 24px rgba(15, 23, 42, .12); }
+.cfa-grid > .cfa-card:nth-child(2) { animation-delay: .06s; }
+.cfa-grid > .cfa-card:nth-child(3) { animation-delay: .12s; }
+.cfa-grid > .cfa-card:nth-child(4) { animation-delay: .18s; }
+.cfa-grid > .cfa-card:nth-child(5) { animation-delay: .24s; }
+.cfa-grid > .cfa-card:nth-child(6) { animation-delay: .3s; }
+
+.cfa-card-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+.cfa-card-head h3 { margin: 0; color: #0f172a; font: 600 15px/1.35 Inter, sans-serif; letter-spacing: -.01em; }
+.cfa-card-head p { margin: 3px 0 0; color: #64748b; font-size: 12px; line-height: 1.45; }
+
+/* Segmented range control */
+.cfa-segment { display: inline-flex; padding: 3px; border-radius: 8px; background: #f1f5f9; flex: none; }
+.cfa-segment button {
+  min-height: 26px; padding: 0 10px; border: 0; border-radius: 6px; background: transparent;
+  color: #64748b; font-size: 11.5px !important; font-weight: 600; cursor: pointer;
+  transition: background .15s ease-out, color .15s ease-out, box-shadow .15s ease-out;
+}
+.cfa-segment button:hover { color: #0f172a; }
+.cfa-segment button.is-active { background: #2563eb; color: #fff; box-shadow: 0 1px 3px rgba(37, 99, 235, .4); }
+
+/* Donut */
+.cfa-donut { position: relative; width: min(100%, 176px); margin: 4px auto 14px; aspect-ratio: 1; }
+.cfa-donut svg { display: block; width: 100%; height: 100%; }
+.cfa-donut-seg { animation: cfa-seg .9s var(--cfa-ease) both; stroke-dasharray: var(--len) var(--rest); }
+.cfa-donut-center { position: absolute; inset: 0; display: grid; place-content: center; text-align: center; }
+.cfa-donut-center strong { color: #0f172a; font: 700 28px/1 Inter, sans-serif; letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
+.cfa-donut-center span { margin-top: 4px; color: #64748b; font-size: 11.5px; font-weight: 500; }
+
+.cfa-legend, .cfa-status-list { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.cfa-legend li, .cfa-status-list li { display: flex; align-items: center; gap: 8px; color: #334155; font-size: 12.5px; }
+.cfa-legend i, .cfa-status-list i, .cfa-key i { flex: none; width: 9px; height: 9px; border-radius: 3px; display: inline-block; }
+.cfa-legend span, .cfa-status-list span { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.cfa-legend b, .cfa-status-list b { color: #0f172a; font-weight: 600; font-variant-numeric: tabular-nums; }
+.cfa-status-list em { color: #94a3b8; font-size: 11.5px; font-style: normal; font-variant-numeric: tabular-nums; }
+
+/* Gauge */
+.cfa-gauge { width: min(100%, 240px); margin: 0 auto; }
+.cfa-gauge svg { display: block; width: 100%; height: auto; overflow: visible; }
+.cfa-gauge-value { stroke-dasharray: var(--val) 100; animation: cfa-gauge 1s var(--cfa-ease) both; }
+.cfa-gauge-needle { transform-origin: 100px 100px; transition: transform 1s var(--cfa-ease); }
+.cfa-gauge-value-text { margin-top: 2px; text-align: center; }
+.cfa-gauge-value-text strong { display: block; color: #0f172a; font: 700 26px/1.1 Inter, sans-serif; letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
+.cfa-gauge-value-text span { color: #64748b; font-size: 12px; }
+.cfa-metric-row {
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  margin-top: 14px; padding: 10px 12px; border-radius: 8px; background: #f8fafc; color: #64748b; font-size: 12px;
+}
+.cfa-metric-row b { color: #0f172a; font-weight: 600; white-space: nowrap; }
+
+/* Charts */
+.cfa-chart { position: relative; width: 100%; min-width: 0; }
+.cfa-chart svg { display: block; max-width: 100%; overflow: visible; touch-action: pan-y; }
+.cfa-axis { fill: #94a3b8; font: 500 11px Inter, sans-serif; }
+.cfa-tip-title { fill: #fff; font: 600 12px Inter, sans-serif; }
+.cfa-tip-text { fill: #cbd5e1; font: 500 11.5px Inter, sans-serif; }
+.cfa-line { stroke-dasharray: 1; stroke-dashoffset: 0; animation: cfa-draw .9s var(--cfa-ease) both; }
+.cfa-area { animation: cfa-fade .9s ease-out .15s both; }
+.cfa-dot { transition: r .15s ease-out; }
+.cfa-bar { transform-box: fill-box; transform-origin: bottom; animation: cfa-grow .6s var(--cfa-ease) both; }
+.cfa-chart-empty {
+  position: absolute; inset: 0; display: grid; place-items: center; padding-bottom: 28px;
+  color: #94a3b8; font-size: 12.5px; pointer-events: none;
+}
+.cfa-key { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 10px; color: #64748b; font-size: 12px; }
+.cfa-key span { display: inline-flex; align-items: center; gap: 6px; }
+
+/* Stacked status bar */
+.cfa-stack { display: flex; gap: 3px; height: 16px; margin: 4px 0 16px; overflow: hidden; border-radius: 999px; background: #f1f5f9; }
+.cfa-stack span { min-width: 6px; border-radius: 999px; transform-origin: left; animation: cfa-scalex .6s var(--cfa-ease) both; }
+
+/* Calendar + progress */
+.cfa-calendar { display: flex; gap: 12px; margin-bottom: 16px; }
+.cfa-date {
+  display: grid; place-items: center; align-content: center; flex: 0 0 76px; padding: 10px 6px;
+  border-radius: 10px; background: #eff6ff; border: 1px solid #dbeafe; text-align: center;
+}
+.cfa-date span { color: #2563eb; font-size: 11px; font-weight: 700; letter-spacing: .08em; }
+.cfa-date strong { color: #0f172a; font: 700 30px/1.1 Inter, sans-serif; letter-spacing: -.03em; }
+.cfa-date small { color: #64748b; font-size: 11px; font-weight: 500; }
+.cfa-events { display: grid; flex: 1; min-width: 0; gap: 8px; align-content: center; }
+.cfa-event { min-width: 0; padding: 8px 10px; border-left: 3px solid; border-radius: 6px; }
+.cfa-event b { display: block; overflow: hidden; color: #0f172a; font-size: 12.5px; font-weight: 600; text-overflow: ellipsis; white-space: nowrap; }
+.cfa-event small { display: block; margin-top: 2px; color: #64748b; font-size: 11px; }
+.cfa-event.is-blue { border-color: #2563eb; background: #eff6ff; }
+.cfa-event.is-orange { border-color: #f59e0b; background: #fffbeb; }
+
+.cfa-progress { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+.cfa-progress li { display: grid; grid-template-columns: 48px minmax(0, 1fr) 28px; align-items: center; gap: 10px; }
+.cfa-progress-label { color: #334155; font-size: 12.5px; font-weight: 600; }
+.cfa-progress-track { display: block; height: 8px; overflow: hidden; border-radius: 999px; background: #e2e8f0; }
+.cfa-progress-fill { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #2563eb, #60a5fa); transform-origin: left; animation: cfa-scalex .8s var(--cfa-ease) both; }
+.cfa-progress b { color: #0f172a; font-size: 12.5px; font-weight: 600; text-align: right; font-variant-numeric: tabular-nums; }
+
+.cfa-empty { padding: 28px 8px; color: #94a3b8; font-size: 12.5px; text-align: center; line-height: 1.6; }
+
+/* States */
+.cfa-skeleton { min-height: 280px; border-color: #e2e8f0; background: linear-gradient(90deg, #f1f5f9 25%, #f8fafc 50%, #f1f5f9 75%); background-size: 200% 100%; animation: cfa-shimmer 1.4s linear infinite; box-shadow: none; }
+.cfa-skeleton:hover { transform: none; box-shadow: none; border-color: #e2e8f0; }
+.cfa-error { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; }
+.cfa-error strong { color: #0f172a; font-size: 14px; }
+.cfa-error p { margin: 0 0 8px; color: #64748b; font-size: 13px; }
+
+@keyframes cfa-rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@keyframes cfa-fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes cfa-rotate { to { transform: rotate(360deg); } }
+@keyframes cfa-pulse { 0% { box-shadow: 0 0 0 0 rgba(22, 163, 74, .45); } 70%, 100% { box-shadow: 0 0 0 7px rgba(22, 163, 74, 0); } }
+@keyframes cfa-draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+@keyframes cfa-grow { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+@keyframes cfa-scalex { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes cfa-seg { from { stroke-dasharray: 0 var(--full); } to { stroke-dasharray: var(--len) var(--rest); } }
+@keyframes cfa-gauge { from { stroke-dasharray: 0 100; } to { stroke-dasharray: var(--val) 100; } }
+@keyframes cfa-shimmer { to { background-position: -200% 0; } }
+
+/* Responsive */
+@media (max-width: 1350px) {
+  .cfa-span-3, .cfa-span-4 { grid-column: span 6; }
+  .cfa-span-6 { grid-column: span 12; }
+  .cfa-order-1 { order: 1; } .cfa-order-2 { order: 2; } .cfa-order-3 { order: 3; }
+  .cfa-order-4 { order: 4; } .cfa-order-5 { order: 5; } .cfa-order-6 { order: 6; }
+  .cfa-span-4.cfa-order-6 { grid-column: span 12; }
+}
+@media (max-width: 1050px) {
+  .cfa-head { align-items: flex-start; flex-direction: column; }
+  .cfa-tools { justify-content: flex-start; }
+}
+@media (max-width: 700px) {
+  .cfa-grid { gap: 12px; }
+  .cfa-span-3, .cfa-span-4, .cfa-span-6, .cfa-span-4.cfa-order-6 { grid-column: span 12; }
+  .cfa-card { padding: 16px; }
+  .cfa-card-head { flex-wrap: wrap; }
+  .cfa-segment { width: 100%; }
+  .cfa-segment button { flex: 1; }
+  .cfa-live small { display: none; }
+  .cfa-date { flex-basis: 66px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cfa *, .cfa *::before, .cfa *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  .cfa-live.is-live i { animation: none; }
+}

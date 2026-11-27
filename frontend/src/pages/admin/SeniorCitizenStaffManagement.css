@@ -1,0 +1,1960 @@
+
+/* =========================================================
+   SENIOR CITIZEN STAFF MANAGEMENT
+   Professional Admin Dashboard Design
+   Fully Responsive CSS
+========================================================= */
+
+/* =========================================================
+   1. ROOT VARIABLES
+========================================================= */
+
+.scsm-page {
+  --scsm-primary: #2563eb;
+  --scsm-primary-dark: #1d4ed8;
+  --scsm-primary-light: #eff6ff;
+
+  --scsm-success: #16a34a;
+  --scsm-success-light: #f0fdf4;
+
+  --scsm-danger: #dc2626;
+  --scsm-danger-light: #fef2f2;
+
+  --scsm-warning: #d97706;
+  --scsm-warning-light: #fffbeb;
+
+  --scsm-purple: #7c3aed;
+  --scsm-purple-light: #f5f3ff;
+
+  --scsm-text: #172033;
+  --scsm-text-secondary: #64748b;
+  --scsm-text-muted: #94a3b8;
+
+  --scsm-border: #e5eaf2;
+  --scsm-border-light: #edf1f6;
+
+  --scsm-background: #f8fafc;
+  --scsm-white: #ffffff;
+
+  --scsm-radius-sm: 8px;
+  --scsm-radius-md: 12px;
+  --scsm-radius-lg: 16px;
+  --scsm-radius-xl: 20px;
+
+  --scsm-shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.04);
+  --scsm-shadow-md: 0 8px 24px rgba(15, 23, 42, 0.07);
+  --scsm-shadow-lg: 0 20px 50px rgba(15, 23, 42, 0.14);
+
+  width: 100%;
+  min-width: 0;
+  min-height: 100%;
+  padding: 28px;
+  color: var(--scsm-text);
+  background: transparent;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  box-sizing: border-box;
+  animation: scsm-page-enter 0.45s ease both;
+}
+
+.scsm-page *,
+.scsm-page *::before,
+.scsm-page *::after {
+  box-sizing: border-box;
+}
+
+.scsm-page button,
+.scsm-page input,
+.scsm-page select,
+.scsm-page textarea {
+  font: inherit;
+}
+
+.scsm-page button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@keyframes scsm-page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scsm-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes scsm-modal-enter {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes scsm-overlay-enter {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scsm-card-enter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scsm-spin {
+  animation: scsm-spin 0.9s linear infinite;
+}
+
+
+/* =========================================================
+   2. PAGE HEADER
+========================================================= */
+
+.scsm-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.scsm-heading > div:first-child {
+  min-width: 0;
+}
+
+.scsm-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  color: var(--scsm-text-secondary);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.scsm-breadcrumb span {
+  color: #cbd5e1;
+}
+
+.scsm-heading h1 {
+  margin: 0;
+  color: var(--scsm-text);
+  font-size: clamp(23px, 2.2vw, 30px);
+  font-weight: 750;
+  line-height: 1.3;
+  letter-spacing: -0.8px;
+}
+
+.scsm-heading p {
+  max-width: 650px;
+  margin: 9px 0 0;
+  color: var(--scsm-text-secondary);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.scsm-heading-actions {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 11px;
+}
+
+
+/* =========================================================
+   3. BUTTONS
+========================================================= */
+
+.scsm-btn {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 10px 17px;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 650;
+  line-height: 1;
+  white-space: nowrap;
+  transition:
+    background 0.22s ease,
+    color 0.22s ease,
+    border-color 0.22s ease,
+    box-shadow 0.22s ease,
+    transform 0.22s ease;
+}
+
+.scsm-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.scsm-btn:not(:disabled):active {
+  transform: scale(0.97);
+}
+
+.scsm-btn-primary {
+  color: #ffffff;
+  background: var(--scsm-primary);
+  border-color: var(--scsm-primary);
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.16);
+}
+
+.scsm-btn-primary:not(:disabled):hover {
+  background: var(--scsm-primary-dark);
+  border-color: var(--scsm-primary-dark);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.24);
+  transform: translateY(-2px);
+}
+
+.scsm-btn-light {
+  color: #475569;
+  background: #ffffff;
+  border-color: var(--scsm-border);
+}
+
+.scsm-btn-light:not(:disabled):hover {
+  color: var(--scsm-primary);
+  background: #f8faff;
+  border-color: #bfdbfe;
+  transform: translateY(-1px);
+}
+
+.scsm-btn-danger {
+  color: #ffffff;
+  background: var(--scsm-danger);
+  border-color: var(--scsm-danger);
+  box-shadow: 0 4px 10px rgba(220, 38, 38, 0.14);
+}
+
+.scsm-btn-danger:not(:disabled):hover {
+  background: #b91c1c;
+  border-color: #b91c1c;
+  box-shadow: 0 6px 15px rgba(220, 38, 38, 0.2);
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   4. ALERT MESSAGES
+========================================================= */
+
+.scsm-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  padding: 13px 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 550;
+  line-height: 1.6;
+  animation: scsm-card-enter 0.25s ease both;
+}
+
+.scsm-alert > svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.scsm-alert > span {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.scsm-alert > button {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  margin: -3px -4px 0 0;
+  padding: 0;
+  color: inherit;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.scsm-alert > button:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.scsm-alert-error {
+  color: #b91c1c;
+  background: #fef2f2;
+  border-color: #fecaca;
+}
+
+.scsm-alert-success {
+  color: #15803d;
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+}
+
+
+/* =========================================================
+   5. STATISTICS CARDS
+========================================================= */
+
+.scsm-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 27px;
+}
+
+.scsm-stat-card {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 16px;
+  padding: 22px 20px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid var(--scsm-border-light);
+  border-radius: var(--scsm-radius-lg);
+  box-shadow: var(--scsm-shadow-sm);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+  animation: scsm-card-enter 0.45s ease both;
+}
+
+.scsm-stat-card:nth-child(1) {
+  animation-delay: 0.04s;
+}
+
+.scsm-stat-card:nth-child(2) {
+  animation-delay: 0.09s;
+}
+
+.scsm-stat-card:nth-child(3) {
+  animation-delay: 0.14s;
+}
+
+.scsm-stat-card:nth-child(4) {
+  animation-delay: 0.19s;
+}
+
+.scsm-stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--scsm-shadow-md);
+  border-color: #dbeafe;
+}
+
+.scsm-stat-icon {
+  display: flex;
+  flex-shrink: 0;
+  width: 49px;
+  height: 49px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 13px;
+}
+
+.scsm-stat-icon.blue {
+  color: #2563eb;
+  background: #eff6ff;
+}
+
+.scsm-stat-icon.green {
+  color: #16a34a;
+  background: #f0fdf4;
+}
+
+.scsm-stat-icon.orange {
+  color: #d97706;
+  background: #fffbeb;
+}
+
+.scsm-stat-icon.purple {
+  color: #7c3aed;
+  background: #f5f3ff;
+}
+
+.scsm-stat-card > div:last-child {
+  min-width: 0;
+}
+
+.scsm-stat-card span {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--scsm-text-secondary);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.scsm-stat-card h2 {
+  margin: 0;
+  color: var(--scsm-text);
+  font-size: 27px;
+  font-weight: 750;
+  line-height: 1.25;
+  letter-spacing: -0.7px;
+}
+
+.scsm-stat-card small {
+  display: block;
+  margin-top: 5px;
+  color: var(--scsm-text-muted);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   6. TABLE CARD
+========================================================= */
+
+.scsm-table-card {
+  min-width: 0;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid var(--scsm-border-light);
+  border-radius: var(--scsm-radius-lg);
+  box-shadow: var(--scsm-shadow-sm);
+}
+
+.scsm-table-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 22px 23px;
+  border-bottom: 1px solid var(--scsm-border-light);
+}
+
+.scsm-table-header > div:first-child {
+  min-width: 0;
+}
+
+.scsm-table-header h3 {
+  margin: 0;
+  color: var(--scsm-text);
+  font-size: 16px;
+  font-weight: 750;
+  letter-spacing: -0.2px;
+}
+
+.scsm-table-header p {
+  margin: 6px 0 0;
+  color: var(--scsm-text-secondary);
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   7. SEARCH AND FILTERS
+========================================================= */
+
+.scsm-filters {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  min-width: 0;
+}
+
+.scsm-search {
+  display: flex;
+  width: 220px;
+  min-width: 150px;
+  height: 40px;
+  align-items: center;
+  gap: 9px;
+  padding: 0 12px;
+  color: #94a3b8;
+  background: #ffffff;
+  border: 1px solid var(--scsm-border);
+  border-radius: 8px;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.scsm-search:focus-within {
+  border-color: #93c5fd;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.09);
+}
+
+.scsm-search svg {
+  flex-shrink: 0;
+}
+
+.scsm-search input {
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+  color: var(--scsm-text);
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 12px;
+}
+
+.scsm-search input::placeholder {
+  color: #94a3b8;
+}
+
+.scsm-select-wrap {
+  display: flex;
+  height: 40px;
+  align-items: center;
+  gap: 7px;
+  padding: 0 10px;
+  color: #94a3b8;
+  background: #ffffff;
+  border: 1px solid var(--scsm-border);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.scsm-select-wrap:focus-within {
+  border-color: #93c5fd;
+}
+
+.scsm-select-wrap svg {
+  flex-shrink: 0;
+}
+
+.scsm-select-wrap select,
+.scsm-designation-filter {
+  min-width: 0;
+  height: 38px;
+  color: #475569;
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 550;
+}
+
+.scsm-designation-filter {
+  max-width: 165px;
+  padding: 0 10px;
+  background: #ffffff;
+  border: 1px solid var(--scsm-border);
+  border-radius: 8px;
+}
+
+.scsm-select-wrap select:focus,
+.scsm-designation-filter:focus {
+  outline: none;
+}
+
+
+/* =========================================================
+   8. TABLE SCROLL
+========================================================= */
+
+.scsm-table-scroll {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 #f8fafc;
+}
+
+.scsm-table-scroll::-webkit-scrollbar {
+  height: 7px;
+}
+
+.scsm-table-scroll::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+
+.scsm-table-scroll::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 20px;
+}
+
+.scsm-table-scroll::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+
+/* =========================================================
+   9. STAFF TABLE
+========================================================= */
+
+.scsm-table {
+  width: 100%;
+  min-width: 1050px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.scsm-table thead {
+  background: #f8fafc;
+}
+
+.scsm-table th {
+  height: 48px;
+  padding: 13px 17px;
+  color: #64748b;
+  border-bottom: 1px solid var(--scsm-border-light);
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 0.7px;
+  white-space: nowrap;
+}
+
+.scsm-table td {
+  padding: 15px 17px;
+  color: #475569;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: middle;
+  font-size: 12px;
+}
+
+.scsm-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.scsm-table tbody tr:hover {
+  background: #f8fbff;
+}
+
+.scsm-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+
+/* =========================================================
+   10. STAFF PERSON / AVATAR
+========================================================= */
+
+.scsm-person {
+  display: flex;
+  min-width: 180px;
+  align-items: center;
+  gap: 11px;
+}
+
+.scsm-avatar {
+  display: flex;
+  flex-shrink: 0;
+  width: 39px;
+  height: 39px;
+  align-items: center;
+  justify-content: center;
+  color: #1d4ed8;
+  background: #eff6ff;
+  border: 1px solid #dbeafe;
+  border-radius: 11px;
+  font-size: 12px;
+  font-weight: 750;
+  letter-spacing: 0.3px;
+}
+
+.scsm-person > div:last-child {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.scsm-person strong {
+  max-width: 190px;
+  overflow: hidden;
+  color: #1e293b;
+  font-size: 12px;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.scsm-person small {
+  color: #94a3b8;
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   11. CONTACT DETAILS
+========================================================= */
+
+.scsm-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 150px;
+}
+
+.scsm-contact span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #64748b;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.scsm-contact svg {
+  flex-shrink: 0;
+  color: #94a3b8;
+}
+
+
+/* =========================================================
+   12. DESIGNATION
+========================================================= */
+
+.scsm-designation {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 10px;
+  color: #475569;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   13. SERVICE AREA
+========================================================= */
+
+.scsm-area {
+  display: flex;
+  min-width: 125px;
+  align-items: flex-start;
+  gap: 6px;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.scsm-area svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: #94a3b8;
+}
+
+.scsm-area span {
+  overflow-wrap: anywhere;
+}
+
+.scsm-manager {
+  display: inline-block;
+  max-width: 175px;
+  overflow: hidden;
+  color: #475569;
+  font-size: 11px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   14. STATUS BADGE
+========================================================= */
+
+.scsm-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 9px;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.scsm-status > span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.scsm-status.active {
+  color: #15803d;
+  background: #f0fdf4;
+  border-color: #dcfce7;
+}
+
+.scsm-status.active > span {
+  background: #22c55e;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.12);
+}
+
+.scsm-status.inactive {
+  color: #b91c1c;
+  background: #fef2f2;
+  border-color: #fee2e2;
+}
+
+.scsm-status.inactive > span {
+  background: #ef4444;
+}
+
+
+/* =========================================================
+   15. TABLE ACTION BUTTONS
+========================================================= */
+
+.scsm-actions {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.scsm-actions button {
+  display: flex;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  color: #64748b;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.scsm-actions button:hover:not(:disabled) {
+  color: var(--scsm-primary);
+  background: #eff6ff;
+  border-color: #bfdbfe;
+  transform: translateY(-2px);
+}
+
+.scsm-actions button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.scsm-actions button.delete {
+  color: #ef4444;
+}
+
+.scsm-actions button.delete:hover {
+  color: #ffffff;
+  background: #dc2626;
+  border-color: #dc2626;
+}
+
+
+/* =========================================================
+   16. LOADING STATE
+========================================================= */
+
+.scsm-loading {
+  display: flex;
+  min-height: 290px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  color: var(--scsm-primary);
+}
+
+.scsm-loading p {
+  margin: 0;
+  color: var(--scsm-text-secondary);
+  font-size: 13px;
+  font-weight: 550;
+}
+
+
+/* =========================================================
+   17. EMPTY STATE
+========================================================= */
+
+.scsm-empty {
+  display: flex;
+  min-height: 340px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 35px 20px;
+  text-align: center;
+}
+
+.scsm-empty > div {
+  display: flex;
+  width: 66px;
+  height: 66px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 17px;
+  color: #64748b;
+  background: #f1f5f9;
+  border-radius: 18px;
+}
+
+.scsm-empty h3 {
+  margin: 0;
+  color: var(--scsm-text);
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.scsm-empty p {
+  max-width: 360px;
+  margin: 9px 0 19px;
+  color: var(--scsm-text-secondary);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   18. MODAL OVERLAY
+========================================================= */
+
+.scsm-modal-overlay {
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 22px;
+  overflow-y: auto;
+  background: rgba(15, 23, 42, 0.58);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  animation: scsm-overlay-enter 0.2s ease both;
+}
+
+
+/* =========================================================
+   19. CREATE / EDIT MODAL
+========================================================= */
+
+.scsm-modal {
+  width: 100%;
+  max-width: 720px;
+  max-height: min(90vh, 850px);
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 17px;
+  box-shadow: var(--scsm-shadow-lg);
+  animation: scsm-modal-enter 0.3s ease both;
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 #f8fafc;
+}
+
+.scsm-modal::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scsm-modal::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+.scsm-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 23px 25px;
+  border-bottom: 1px solid var(--scsm-border-light);
+}
+
+.scsm-modal-header > div {
+  min-width: 0;
+}
+
+.scsm-modal-header > div > span {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--scsm-primary);
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 1px;
+}
+
+.scsm-modal-header h2 {
+  margin: 0;
+  color: var(--scsm-text);
+  font-size: 20px;
+  font-weight: 750;
+  letter-spacing: -0.4px;
+}
+
+.scsm-modal-header p {
+  margin: 7px 0 0;
+  color: var(--scsm-text-secondary);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.scsm-modal-header > button {
+  display: flex;
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  color: #64748b;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.scsm-modal-header > button:hover {
+  color: #dc2626;
+  background: #fef2f2;
+  transform: rotate(4deg);
+}
+
+
+/* =========================================================
+   20. FORM ERROR
+========================================================= */
+
+.scsm-form-error {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin: 18px 25px 0;
+  padding: 11px 13px;
+  color: #b91c1c;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.scsm-form-error svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.scsm-form-error span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   21. FORM GRID
+========================================================= */
+
+.scsm-modal form {
+  padding: 23px 25px 0;
+}
+
+.scsm-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 19px 17px;
+}
+
+.scsm-form-grid > label {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 8px;
+  color: #334155;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.scsm-form-grid input,
+.scsm-form-grid select,
+.scsm-form-grid textarea {
+  width: 100%;
+  min-width: 0;
+  min-height: 43px;
+  padding: 10px 12px;
+  color: #1e293b;
+  background: #ffffff;
+  border: 1px solid #dfe5ee;
+  border-radius: 8px;
+  outline: none;
+  font-size: 12px;
+  font-weight: 450;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.scsm-form-grid input::placeholder,
+.scsm-form-grid textarea::placeholder {
+  color: #a0aaba;
+}
+
+.scsm-form-grid input:hover,
+.scsm-form-grid select:hover,
+.scsm-form-grid textarea:hover {
+  border-color: #cbd5e1;
+}
+
+.scsm-form-grid input:focus,
+.scsm-form-grid select:focus,
+.scsm-form-grid textarea:focus {
+  background: #ffffff;
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.09);
+}
+
+.scsm-form-grid select {
+  cursor: pointer;
+}
+
+.scsm-form-grid textarea {
+  min-height: 90px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.scsm-form-grid .scsm-full-field {
+  grid-column: 1 / -1;
+}
+
+.scsm-field-note {
+  margin-top: -2px;
+  color: #dc2626;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   22. MODAL FOOTER
+========================================================= */
+
+.scsm-modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 19px 25px;
+  margin-top: 23px;
+  background: #fbfcfe;
+  border-top: 1px solid var(--scsm-border-light);
+}
+
+
+/* =========================================================
+   23. STAFF DETAILS MODAL
+========================================================= */
+
+.scsm-detail-modal {
+  width: 100%;
+  max-width: 600px;
+  max-height: min(90vh, 850px);
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: #ffffff;
+  border-radius: 17px;
+  box-shadow: var(--scsm-shadow-lg);
+  animation: scsm-modal-enter 0.3s ease both;
+}
+
+.scsm-detail-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px 20px 22px;
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(219, 234, 254, 0.7),
+      transparent 70%
+    ),
+    #ffffff;
+  border-bottom: 1px solid var(--scsm-border-light);
+}
+
+.scsm-detail-avatar {
+  display: flex;
+  width: 72px;
+  height: 72px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  color: #1d4ed8;
+  background: #eff6ff;
+  border: 3px solid #dbeafe;
+  border-radius: 22px;
+  font-size: 23px;
+  font-weight: 800;
+  box-shadow: 0 5px 15px rgba(37, 99, 235, 0.1);
+}
+
+.scsm-detail-profile h3 {
+  margin: 0;
+  color: var(--scsm-text);
+  font-size: 18px;
+  font-weight: 750;
+}
+
+.scsm-detail-profile p {
+  margin: 6px 0 12px;
+  color: var(--scsm-text-secondary);
+  font-size: 12px;
+}
+
+.scsm-detail-profile .scsm-status {
+  margin-top: 2px;
+}
+
+
+/* =========================================================
+   24. DETAILS GRID
+========================================================= */
+
+.scsm-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 13px;
+  padding: 23px 25px;
+}
+
+.scsm-detail-grid > div {
+  display: grid;
+  min-width: 0;
+  grid-template-columns: 19px minmax(0, 1fr);
+  align-items: center;
+  gap: 6px 8px;
+  padding: 13px;
+  background: #f8fafc;
+  border: 1px solid #edf1f6;
+  border-radius: 10px;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.scsm-detail-grid > div:hover {
+  background: #f5f9ff;
+  border-color: #dbeafe;
+}
+
+.scsm-detail-grid > div > svg {
+  grid-column: 1;
+  grid-row: 1;
+  color: var(--scsm-primary);
+}
+
+.scsm-detail-grid > div > span {
+  grid-column: 2;
+  grid-row: 1;
+  color: #94a3b8;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.scsm-detail-grid > div > strong {
+  grid-column: 1 / -1;
+  min-width: 0;
+  margin-top: 4px;
+  overflow-wrap: anywhere;
+  color: #334155;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.scsm-detail-grid .scsm-detail-full {
+  grid-column: 1 / -1;
+}
+
+
+/* =========================================================
+   25. DELETE CONFIRMATION MODAL
+========================================================= */
+
+.scsm-confirm-modal {
+  width: 100%;
+  max-width: 410px;
+  padding: 28px 25px 0;
+  overflow: hidden;
+  text-align: center;
+  background: #ffffff;
+  border-radius: 17px;
+  box-shadow: var(--scsm-shadow-lg);
+  animation: scsm-modal-enter 0.3s ease both;
+}
+
+.scsm-confirm-icon {
+  display: flex;
+  width: 60px;
+  height: 60px;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 17px;
+  color: #dc2626;
+  background: #fef2f2;
+  border: 1px solid #fee2e2;
+  border-radius: 17px;
+}
+
+.scsm-confirm-modal h2 {
+  margin: 0;
+  color: var(--scsm-text);
+  font-size: 19px;
+  font-weight: 750;
+}
+
+.scsm-confirm-modal p {
+  margin: 12px 0 0;
+  color: var(--scsm-text-secondary);
+  font-size: 12px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+.scsm-confirm-modal p strong {
+  color: #334155;
+  font-weight: 700;
+}
+
+.scsm-confirm-modal .scsm-modal-footer {
+  justify-content: center;
+  margin: 23px -25px 0;
+}
+
+
+/* =========================================================
+   26. FOCUS ACCESSIBILITY
+========================================================= */
+
+.scsm-page button:focus-visible,
+.scsm-page input:focus-visible,
+.scsm-page select:focus-visible,
+.scsm-page textarea:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.22);
+  outline-offset: 2px;
+}
+
+.scsm-page button:focus:not(:focus-visible) {
+  outline: none;
+}
+
+
+/* =========================================================
+   27. LARGE LAPTOPS
+========================================================= */
+
+@media (max-width: 1400px) {
+  .scsm-page {
+    padding: 24px;
+  }
+
+  .scsm-stats {
+    gap: 14px;
+  }
+
+  .scsm-stat-card {
+    gap: 12px;
+    padding: 19px 16px;
+  }
+
+  .scsm-stat-icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .scsm-stat-card h2 {
+    font-size: 25px;
+  }
+
+  .scsm-table-header {
+    align-items: flex-start;
+  }
+
+  .scsm-filters {
+    flex-wrap: wrap;
+  }
+}
+
+
+/* =========================================================
+   28. SMALL LAPTOPS
+========================================================= */
+
+@media (max-width: 1100px) {
+  .scsm-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .scsm-table-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .scsm-filters {
+    justify-content: flex-start;
+  }
+
+  .scsm-search {
+    flex: 1;
+    width: auto;
+  }
+}
+
+
+/* =========================================================
+   29. TABLETS
+========================================================= */
+
+@media (max-width: 768px) {
+  .scsm-page {
+    padding: 19px;
+  }
+
+  .scsm-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 17px;
+    margin-bottom: 22px;
+  }
+
+  .scsm-heading h1 {
+    font-size: 25px;
+  }
+
+  .scsm-heading p {
+    font-size: 13px;
+  }
+
+  .scsm-heading-actions {
+    width: 100%;
+  }
+
+  .scsm-heading-actions .scsm-btn {
+    flex: 1;
+  }
+
+  .scsm-stats {
+    gap: 12px;
+    margin-bottom: 21px;
+  }
+
+  .scsm-stat-card {
+    padding: 16px 14px;
+  }
+
+  .scsm-stat-icon {
+    width: 41px;
+    height: 41px;
+    border-radius: 11px;
+  }
+
+  .scsm-stat-icon svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  .scsm-stat-card h2 {
+    font-size: 23px;
+  }
+
+  .scsm-table-header {
+    padding: 18px;
+  }
+
+  .scsm-filters {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+  }
+
+  .scsm-search {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+
+  .scsm-select-wrap,
+  .scsm-designation-filter {
+    width: 100%;
+    max-width: none;
+  }
+
+  .scsm-select-wrap select {
+    flex: 1;
+  }
+
+  .scsm-table th,
+  .scsm-table td {
+    padding-right: 13px;
+    padding-left: 13px;
+  }
+
+  .scsm-modal-overlay {
+    padding: 15px;
+  }
+
+  .scsm-modal-header {
+    padding: 20px;
+  }
+
+  .scsm-modal form {
+    padding: 20px 20px 0;
+  }
+
+  .scsm-form-error {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+
+  .scsm-modal-footer {
+    padding: 16px 20px;
+  }
+
+  .scsm-detail-grid {
+    padding: 19px 20px;
+  }
+}
+
+
+/* =========================================================
+   30. MOBILE DEVICES
+========================================================= */
+
+@media (max-width: 540px) {
+  .scsm-page {
+    padding: 14px;
+  }
+
+  .scsm-heading {
+    gap: 15px;
+  }
+
+  .scsm-breadcrumb {
+    margin-bottom: 8px;
+    font-size: 11px;
+  }
+
+  .scsm-heading h1 {
+    font-size: 21px;
+    line-height: 1.4;
+    letter-spacing: -0.5px;
+  }
+
+  .scsm-heading p {
+    margin-top: 6px;
+    font-size: 12px;
+    line-height: 1.65;
+  }
+
+  .scsm-heading-actions {
+    gap: 8px;
+  }
+
+  .scsm-btn {
+    min-height: 40px;
+    gap: 7px;
+    padding: 9px 11px;
+    font-size: 11px;
+  }
+
+  .scsm-heading-actions .scsm-btn {
+    flex: 1;
+  }
+
+  .scsm-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .scsm-stat-card {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 11px;
+    padding: 14px;
+    border-radius: 12px;
+  }
+
+  .scsm-stat-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .scsm-stat-card span {
+    font-size: 11px;
+  }
+
+  .scsm-stat-card h2 {
+    font-size: 23px;
+  }
+
+  .scsm-stat-card small {
+    font-size: 10px;
+  }
+
+  .scsm-table-card {
+    border-radius: 12px;
+  }
+
+  .scsm-table-header {
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .scsm-table-header h3 {
+    font-size: 14px;
+  }
+
+  .scsm-table-header p {
+    font-size: 11px;
+  }
+
+  .scsm-filters {
+    gap: 8px;
+  }
+
+  .scsm-search {
+    height: 39px;
+  }
+
+  .scsm-select-wrap {
+    height: 39px;
+    padding: 0 8px;
+  }
+
+  .scsm-select-wrap select,
+  .scsm-designation-filter {
+    height: 37px;
+    font-size: 11px;
+  }
+
+  .scsm-table {
+    min-width: 1000px;
+  }
+
+  .scsm-loading {
+    min-height: 240px;
+  }
+
+  .scsm-empty {
+    min-height: 280px;
+    padding: 25px 15px;
+  }
+
+  .scsm-empty h3 {
+    font-size: 15px;
+  }
+
+  .scsm-empty p {
+    font-size: 11px;
+  }
+
+  .scsm-modal-overlay {
+    align-items: flex-start;
+    padding: 12px;
+  }
+
+  .scsm-modal,
+  .scsm-detail-modal {
+    max-height: calc(100dvh - 24px);
+    margin: auto 0;
+    border-radius: 13px;
+  }
+
+  .scsm-modal-header {
+    padding: 17px;
+  }
+
+  .scsm-modal-header h2 {
+    font-size: 17px;
+  }
+
+  .scsm-modal-header p {
+    font-size: 11px;
+  }
+
+  .scsm-modal form {
+    padding: 18px 17px 0;
+  }
+
+  .scsm-form-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .scsm-form-grid .scsm-full-field {
+    grid-column: auto;
+  }
+
+  .scsm-form-grid > label {
+    gap: 7px;
+    font-size: 11px;
+  }
+
+  .scsm-form-grid input,
+  .scsm-form-grid select,
+  .scsm-form-grid textarea {
+    min-height: 42px;
+    font-size: 12px;
+  }
+
+  .scsm-form-error {
+    margin: 15px 17px 0;
+    font-size: 11px;
+  }
+
+  .scsm-modal-footer {
+    gap: 8px;
+    padding: 14px 17px;
+  }
+
+  .scsm-modal-footer .scsm-btn {
+    flex: 1;
+  }
+
+  .scsm-detail-grid {
+    grid-template-columns: 1fr;
+    gap: 9px;
+    padding: 16px 17px;
+  }
+
+  .scsm-detail-grid .scsm-detail-full {
+    grid-column: auto;
+  }
+
+  .scsm-detail-profile {
+    padding: 20px 15px;
+  }
+
+  .scsm-detail-avatar {
+    width: 62px;
+    height: 62px;
+    font-size: 20px;
+  }
+
+  .scsm-detail-profile h3 {
+    font-size: 16px;
+  }
+
+  .scsm-detail-modal .scsm-modal-header {
+    padding: 17px;
+  }
+
+  .scsm-detail-modal .scsm-modal-footer {
+    padding: 14px 17px;
+  }
+
+  .scsm-confirm-modal {
+    max-width: 100%;
+    padding: 24px 18px 0;
+    border-radius: 14px;
+  }
+
+  .scsm-confirm-modal h2 {
+    font-size: 17px;
+  }
+
+  .scsm-confirm-modal p {
+    font-size: 11px;
+  }
+
+  .scsm-confirm-modal .scsm-modal-footer {
+    margin-right: -18px;
+    margin-left: -18px;
+    padding: 14px 18px;
+  }
+}
+
+
+/* =========================================================
+   31. VERY SMALL MOBILE DEVICES
+========================================================= */
+
+@media (max-width: 360px) {
+  .scsm-page {
+    padding: 11px;
+  }
+
+  .scsm-heading h1 {
+    font-size: 19px;
+  }
+
+  .scsm-heading-actions {
+    flex-direction: column;
+  }
+
+  .scsm-heading-actions .scsm-btn {
+    width: 100%;
+  }
+
+  .scsm-stats {
+    gap: 8px;
+  }
+
+  .scsm-stat-card {
+    padding: 11px;
+  }
+
+  .scsm-stat-card h2 {
+    font-size: 21px;
+  }
+
+  .scsm-filters {
+    grid-template-columns: 1fr;
+  }
+
+  .scsm-search {
+    grid-column: auto;
+  }
+
+  .scsm-modal-overlay {
+    padding: 8px;
+  }
+
+  .scsm-modal,
+  .scsm-detail-modal {
+    max-height: calc(100dvh - 16px);
+  }
+
+  .scsm-modal-footer {
+    flex-direction: column-reverse;
+  }
+
+  .scsm-modal-footer .scsm-btn {
+    width: 100%;
+  }
+}
+
+
+/* =========================================================
+   32. REDUCED MOTION ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .scsm-page *,
+  .scsm-page *::before,
+  .scsm-page *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+/* =====================================================
+   ACTIVATE / DEACTIVATE ACTION BUTTONS
+===================================================== */
+
+.scsm-status-action {
+  width: 34px;
+  height: 34px;
+  min-width: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.scsm-status-action.activate {
+  color: #15803d;
+  background: #dcfce7;
+  border-color: #bbf7d0;
+}
+
+.scsm-status-action.activate:hover {
+  color: #ffffff;
+  background: #15803d;
+  border-color: #15803d;
+  transform: translateY(-2px);
+}
+
+.scsm-status-action.deactivate {
+  color: #d97706;
+  background: #fef3c7;
+  border-color: #fde68a;
+}
+
+.scsm-status-action.deactivate:hover {
+  color: #ffffff;
+  background: #d97706;
+  border-color: #d97706;
+  transform: translateY(-2px);
+}
+
+.scsm-status-action:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.scsm-status-action:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.25);
+  outline-offset: 2px;
+}
+
+@media (max-width: 640px) {
+  .scsm-status-action {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+  }
+}

@@ -1,0 +1,583 @@
+/* DASHBOARD MESSAGES */
+
+.scmp-messages-panel {
+  margin: 0 0 20px;
+  padding: 19px;
+  border: 1px solid #cfdbf7;
+  border-radius: 12px;
+  background: #e6edfd;
+}
+
+.scmp-messages-heading {
+  gap: 14px;
+}
+
+.scmp-message-heading-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.scmp-message-refresh,
+.scmp-compose-button {
+  min-height: 35px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: 1px solid #cfdbf7;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #3b4a82;
+  font: 700 10px Inter, sans-serif;
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+.scmp-message-refresh {
+  width: 36px;
+  padding: 0;
+}
+
+.scmp-compose-button {
+  padding: 0 12px;
+  background: #2e5de6;
+  border-color: #2e5de6;
+  color: #fff;
+}
+
+.scmp-message-refresh:hover:not(:disabled) {
+  color: #2e5de6;
+  border-color: #cfdbf7;
+  background: #dbe6ff;
+}
+
+.scmp-compose-button:hover:not(:disabled) {
+  background: #1a3bb0;
+}
+
+.scmp-message-refresh:disabled,
+.scmp-compose-button:disabled {
+  opacity: .6;
+  cursor: wait;
+}
+
+.scmp-message-tabs {
+  display: flex;
+  gap: 7px;
+  margin-top: 17px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #cfdbf7;
+}
+
+.scmp-message-tabs button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 11px;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: #6b7bb0;
+  font: 700 10px Inter, sans-serif;
+  cursor: pointer;
+}
+
+.scmp-message-tabs button.active {
+  background: #dbe6ff;
+  color: #2e5de6;
+}
+
+.scmp-message-tabs button span {
+  min-width: 18px;
+  height: 18px;
+  display: inline-grid;
+  place-items: center;
+  padding: 0 5px;
+  border-radius: 6px;
+  background: #fef3c7;
+  color: #b45309;
+  font-size: 9px;
+}
+
+.scmp-message-list {
+  display: grid;
+}
+
+.scmp-message-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 7px;
+  border: 0;
+  border-bottom: 1px solid #cfdbf7;
+  background: #ffffff;
+  text-align: left;
+  cursor: pointer;
+  transition: background .18s ease;
+}
+
+.scmp-message-row:last-child {
+  border-bottom: 0;
+}
+
+.scmp-message-row:hover {
+  background: #f3f7ff;
+}
+
+
+.scmp-message-avatar {
+  width: 38px;
+  height: 38px;
+  flex: 0 0 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 11px;
+  background: #ffffff;
+  color: #2e5de6;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.scmp-message-summary {
+  min-width: 0;
+  flex: 1;
+  display: grid;
+  gap: 3px;
+}
+
+.scmp-message-person {
+  overflow: hidden;
+  color: #3b4a82;
+  font-size: 9px;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.scmp-message-summary strong {
+  overflow: hidden;
+  color: #071039;
+  font-size: 10px;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.scmp-message-preview {
+  overflow: hidden;
+  color: #6b7bb0;
+  font-size: 9px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.scmp-message-meta {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: flex-end;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.scmp-message-meta time {
+  color: #6b7bb0;
+  font-size: 8px;
+  white-space: nowrap;
+}
+
+.scmp-message-meta i {
+  padding: 3px 6px;
+  border-radius: 5px;
+  background: #fef3c7;
+  color: #b45309;
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.scmp-message-empty {
+  min-height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+  color: #6b7bb0;
+  font-size: 10px;
+  text-align: center;
+}
+
+.scmp-message-empty strong {
+  color: #3b4a82;
+  font-size: 11px;
+}
+
+.scmp-message-empty span {
+  color: #6b7bb0;
+  font-size: 9px;
+}
+
+.scmp-message-error {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  margin-top: 10px;
+  padding: 9px 11px;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  background: #fef2f2;
+  color: #b91c1c;
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+/* MESSAGE MODALS */
+
+.scmp-message-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  background: rgba(7, 16, 57, .48);
+}
+
+.scmp-message-modal {
+  width: min(100%, 540px);
+  max-height: min(88vh, 760px);
+  overflow: auto;
+  border: 1px solid #cfdbf7;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 24px 70px rgba(15, 34, 112, .2);
+}
+
+.scmp-message-modal-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 20px 22px;
+  border-bottom: 1px solid #cfdbf7;
+}
+
+.scmp-message-modal-head span {
+  color: #2e5de6;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.scmp-message-modal-head h2 {
+  margin: 5px 0 0;
+  color: #071039;
+  font: 800 17px 'Plus Jakarta Sans', sans-serif;
+  overflow-wrap: anywhere;
+}
+
+.scmp-message-modal-head > button {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  border: 1px solid #cfdbf7;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #3b4a82;
+  cursor: pointer;
+}
+
+.scmp-message-form {
+  display: grid;
+  gap: 15px;
+  padding: 20px 22px 22px;
+}
+
+.scmp-message-form label,
+.scmp-message-reply-form label {
+  display: grid;
+  gap: 7px;
+  color: #3b4a82;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.scmp-message-form input,
+.scmp-message-form select,
+.scmp-message-form textarea,
+.scmp-message-reply-form textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 11px 12px;
+  border: 1px solid #cfdbf7;
+  border-radius: 8px;
+  outline: none;
+  background: #ffffff;
+  color: #071039;
+  font: 10px Inter, sans-serif;
+}
+
+.scmp-message-form input:focus,
+.scmp-message-form select:focus,
+.scmp-message-form textarea:focus,
+.scmp-message-reply-form textarea:focus {
+  border-color: #afc5f8;
+  box-shadow: 0 0 0 3px rgba(46, 93, 230, .08);
+}
+
+.scmp-message-form textarea,
+.scmp-message-reply-form textarea {
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.scmp-message-form label > small {
+  color: #6b7bb0;
+  font-size: 8px;
+  font-weight: 500;
+  text-align: right;
+}
+
+.scmp-message-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding-top: 3px;
+}
+
+.scmp-message-modal-actions button,
+.scmp-message-reply-form button {
+  min-height: 35px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 0 13px;
+  border: 1px solid #2e5de6;
+  border-radius: 8px;
+  background: #2e5de6;
+  color: #fff;
+  font: 700 9px Inter, sans-serif;
+  cursor: pointer;
+}
+
+.scmp-message-modal-actions button.secondary {
+  border-color: #cfdbf7;
+  background: #ffffff;
+  color: #3b4a82;
+}
+
+.scmp-message-modal-actions button:disabled,
+.scmp-message-reply-form button:disabled {
+  opacity: .55;
+  cursor: not-allowed;
+}
+
+/* MESSAGE DETAILS */
+
+.scmp-message-detail-modal {
+  padding-bottom: 20px;
+}
+
+.scmp-message-detail-meta {
+  padding: 15px 22px;
+  border-bottom: 1px solid #cfdbf7;
+}
+
+.scmp-message-detail-meta p {
+  margin: 0 0 6px;
+  color: #3b4a82;
+  font-size: 10px;
+  overflow-wrap: anywhere;
+}
+
+.scmp-message-detail-meta p strong {
+  color: #071039;
+}
+
+.scmp-message-detail-meta time {
+  display: block;
+  margin-top: 9px;
+  color: #6b7bb0;
+  font-size: 8px;
+}
+
+.scmp-message-detail-content {
+  margin: 17px 22px;
+  padding: 15px;
+  border: 1px solid #cfdbf7;
+  border-radius: 9px;
+  background: #f3f7ff;
+  color: #3b4a82;
+  font-size: 10px;
+  line-height: 1.8;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.scmp-message-reply-form {
+  display: grid;
+  gap: 9px;
+  margin: 18px 22px 0;
+}
+
+.scmp-message-reply-form > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.scmp-message-reply-form small {
+  color: #6b7bb0;
+  font-size: 8px;
+}
+
+.scmp-message-detail-modal > .scmp-message-error {
+  margin: 14px 22px 0;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 700px) {
+  .scmp-messages-panel {
+    padding: 14px;
+  }
+
+  .scmp-messages-heading {
+    align-items: flex-start;
+  }
+
+  .scmp-message-row {
+    gap: 8px;
+    padding: 12px 2px;
+  }
+
+  .scmp-message-avatar {
+    width: 33px;
+    height: 33px;
+    flex-basis: 33px;
+  }
+
+  .scmp-message-meta time {
+    max-width: 80px;
+    white-space: normal;
+    text-align: right;
+  }
+
+  .scmp-message-modal-head,
+  .scmp-message-form {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .scmp-message-detail-meta {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .scmp-message-detail-content {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+
+  .scmp-message-reply-form {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+
+  .scmp-message-detail-modal > .scmp-message-error {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}
+
+/* =========================================================
+   MANAGER 2 THEME - MOTION & INTERACTION LAYER
+   Colours: sidebar #0f2270 | page #ffffff | cards #e6edfd
+   buttons #2e5de6 | accent #f59e0b | text #071039
+   (Appended layer: transitions and animations only.)
+========================================================= */
+
+@keyframes scmp-msg-fade-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes scmp-msg-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scmp-msg-pop {
+  from { opacity: 0; transform: translateY(12px) scale(.98); }
+  to { opacity: 1; transform: none; }
+}
+
+.scmp-messages-panel {
+  animation: scmp-msg-fade-up .5s ease backwards;
+}
+
+.scmp-message-row {
+  transition: background-color .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+
+.scmp-message-refresh,
+.scmp-compose-button,
+.scmp-message-tabs button,
+.scmp-message-modal-actions button,
+.scmp-message-modal-head > button {
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease, transform .15s ease;
+}
+
+.scmp-message-overlay {
+  animation: scmp-msg-fade .2s ease;
+}
+
+.scmp-message-modal {
+  animation: scmp-msg-pop .28s cubic-bezier(.2, .8, .2, 1);
+}
+
+.scmp-message-row:hover {
+  box-shadow: 0 6px 16px rgba(15, 34, 112, .08);
+}
+
+.scmp-message-refresh:not(:disabled):active,
+.scmp-compose-button:not(:disabled):active,
+.scmp-message-modal-actions button:not(:disabled):active {
+  transform: scale(.97);
+}
+
+@media (max-width: 700px) {
+  .scmp-message-tabs {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    scrollbar-width: none;
+  }
+
+  .scmp-message-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scmp-message-tabs button {
+    flex: 0 0 auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scmp-messages-panel,
+  .scmp-messages-panel *,
+  .scmp-messages-panel *::before,
+  .scmp-messages-panel *::after,
+  .scmp-message-overlay,
+  .scmp-message-overlay *,
+  .scmp-message-overlay *::before,
+  .scmp-message-overlay *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

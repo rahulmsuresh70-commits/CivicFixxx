@@ -1,0 +1,1738 @@
+/* =========================================
+   SENIOR CITIZEN WORK MANAGEMENT
+========================================= */
+
+.scwm-shell {
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+.scwm-content {
+  padding-bottom: 25px;
+}
+
+.scwm-page-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 26px;
+}
+
+.scwm-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  color: #2e5de6;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.1px;
+  margin-bottom: 10px;
+}
+
+.scwm-page-heading h1 {
+  color: #071039;
+  font-size: 27px;
+  font-weight: 750;
+  margin: 0 0 8px;
+}
+
+.scwm-page-heading p {
+  color: #6b7bb0;
+  font-size: 13px;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.scwm-refresh {
+  height: 40px;
+  padding: 0 16px;
+  border: 1px solid #cfdbf7;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #3b4a82;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 650;
+  cursor: pointer;
+  transition: .2s ease;
+  white-space: nowrap;
+}
+
+.scwm-refresh:hover {
+  border-color: #cfdbf7;
+  color: #2e5de6;
+  background: #dbe6ff;
+}
+
+.scwm-refresh:disabled {
+  opacity: .6;
+  cursor: not-allowed;
+}
+
+/* =========================================
+   ERROR
+========================================= */
+
+.scwm-error {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 15px;
+  margin-bottom: 20px;
+  border: 1px solid #fecaca;
+  border-radius: 10px;
+  background: #fef2f2;
+  color: #b91c1c;
+  font-size: 13px;
+}
+
+/* =========================================
+   SUMMARY CARDS
+========================================= */
+
+.scwm-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 25px;
+}
+
+.scwm-stat-card {
+  min-height: 105px;
+  padding: 19px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #e6edfd;
+  border: 1px solid #cfdbf7;
+  border-radius: 14px;
+  box-shadow: 0 3px 12px rgba(15, 34, 112, .025);
+}
+
+.scwm-stat-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.scwm-stat-icon.blue {
+  color: #2e5de6;
+  background: #ffffff;
+}
+
+.scwm-stat-icon.purple {
+  color: #5b3fd1;
+  background: #ede9fe;
+}
+
+.scwm-stat-icon.green {
+  color: #0f766e;
+  background: #ccfbf1;
+}
+
+.scwm-stat-icon.orange {
+  color: #b45309;
+  background: #fef3c7;
+}
+
+.scwm-stat-icon.indigo {
+  color: #2e5de6;
+  background: #ffffff;
+}
+
+.scwm-stat-card span {
+  display: block;
+  margin-bottom: 7px;
+  color: #6b7bb0;
+  font-size: 11px;
+  font-weight: 550;
+}
+
+.scwm-stat-card strong {
+  color: #071039;
+  font-size: 25px;
+  font-weight: 750;
+}
+
+/* =========================================
+   STAFF TABLE
+========================================= */
+
+.scwm-table-card {
+  overflow: hidden;
+  background: #e6edfd;
+  border: 1px solid #cfdbf7;
+  border-radius: 15px;
+  box-shadow: 0 4px 16px rgba(15, 34, 112, .025);
+}
+
+.scwm-table-heading {
+  padding: 23px 24px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.scwm-table-heading h3 {
+  color: #071039;
+  font-size: 16px;
+  font-weight: 750;
+  margin: 0 0 7px;
+}
+
+.scwm-table-heading p {
+  color: #6b7bb0;
+  font-size: 12px;
+  margin: 0;
+}
+
+.scwm-count {
+  padding: 9px 13px;
+  border-radius: 8px;
+  background: #dbe6ff;
+  color: #2e5de6;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* Toolbar */
+
+.scwm-toolbar {
+  padding: 0 24px 19px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.scwm-search {
+  height: 43px;
+  padding: 0 13px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 150px;
+  border: 1px solid #cfdbf7;
+  border-radius: 9px;
+  color: #6b7bb0;
+  background: #ffffff;
+}
+
+.scwm-search:focus-within {
+  border-color: #afc5f8;
+  box-shadow: 0 0 0 3px rgba(46, 93, 230, .07);
+}
+
+.scwm-search input {
+  width: 100%;
+  min-width: 0;
+  border: none;
+  outline: none;
+  color: #071039;
+  background: transparent;
+  font: inherit;
+  font-size: 12px;
+}
+
+.scwm-search input::placeholder {
+  color: #6b7bb0;
+}
+
+.scwm-toolbar select,
+.scwm-work-filters select {
+  height: 43px;
+  padding: 0 13px;
+  border: 1px solid #cfdbf7;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #3b4a82;
+  font-family: inherit;
+  font-size: 12px;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Table */
+
+.scwm-table-scroll {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.scwm-table {
+  width: 100%;
+  min-width: 950px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.scwm-table thead {
+  background: #ffffff;
+}
+
+.scwm-table th {
+  padding: 15px 14px;
+  color: #6b7bb0;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .45px;
+  white-space: nowrap;
+  border-top: 1px solid #cfdbf7;
+  border-bottom: 1px solid #cfdbf7;
+}
+
+.scwm-table th:first-child,
+.scwm-table td:first-child {
+  padding-left: 20px;
+}
+
+.scwm-table td {
+  padding: 14px;
+  border-bottom: 1px solid #cfdbf7;
+  color: #3b4a82;
+  font-size: 12px;
+  vertical-align: middle;
+}
+
+.scwm-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.scwm-table tbody tr:hover {
+  background: #f3f7ff;
+}
+
+/* Staff cell */
+
+.scwm-staff-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 170px;
+}
+
+.scwm-staff-avatar {
+  width: 43px;
+  height: 43px;
+  border-radius: 12px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  color: #2e5de6;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.scwm-staff-cell strong {
+  display: block;
+  color: #071039;
+  font-size: 12px;
+  font-weight: 750;
+  margin-bottom: 5px;
+}
+
+.scwm-staff-cell small {
+  color: #6b7bb0;
+  font-size: 10px;
+}
+
+/* Contact */
+
+.scwm-contact-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 150px;
+}
+
+.scwm-contact-cell span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #6b7bb0;
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.scwm-contact-cell svg {
+  color: #6b7bb0;
+  flex-shrink: 0;
+}
+
+.scwm-number {
+  color: #071039;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.scwm-number.green {
+  color: #0f766e;
+}
+
+.scwm-number.orange {
+  color: #b45309;
+}
+
+.scwm-number.blue {
+  color: #2e5de6;
+}
+
+/* Work status */
+
+.scwm-work-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 10px;
+  border-radius: 8px;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.scwm-work-label.overdue {
+  color: #b91c1c;
+  background: #fee2e2;
+}
+
+.scwm-work-label.progress {
+  color: #2e5de6;
+  background: #dbe6ff;
+}
+
+.scwm-work-label.completed {
+  color: #0f766e;
+  background: #ccfbf1;
+}
+
+.scwm-work-label.pending {
+  color: #b45309;
+  background: #fef3c7;
+}
+
+/* View button */
+
+.scwm-view-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 34px;
+  padding: 0 12px;
+  border: 1px solid #cfdbf7;
+  border-radius: 8px;
+  background: #dbe6ff;
+  color: #2e5de6;
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 750;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: .2s ease;
+}
+
+.scwm-view-button:hover {
+  color: #fff;
+  background: #2e5de6;
+  border-color: #2e5de6;
+}
+
+.scwm-table-footer {
+  padding: 15px 22px;
+  border-top: 1px solid #cfdbf7;
+  color: #6b7bb0;
+  font-size: 11px;
+}
+
+/* =========================================
+   EMPTY STATE
+========================================= */
+
+.scwm-empty {
+  min-height: 190px;
+  padding: 35px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #6b7bb0;
+  text-align: center;
+}
+
+.scwm-empty strong {
+  color: #071039;
+  font-size: 13px;
+}
+
+.scwm-empty span {
+  color: #6b7bb0;
+  font-size: 11px;
+}
+
+.scwm-spin {
+  animation: scwm-spin 1s linear infinite;
+}
+
+@keyframes scwm-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================
+   MODAL
+========================================= */
+
+.scwm-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(7, 16, 57, .56);
+  backdrop-filter: blur(5px);
+}
+
+.scwm-modal {
+  width: min(850px, 100%);
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 25px 80px rgba(15, 34, 112, .22);
+}
+
+.scwm-modal-header {
+  padding: 22px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 15px;
+  border-bottom: 1px solid #cfdbf7;
+  flex-shrink: 0;
+}
+
+.scwm-modal-header h2 {
+  color: #071039;
+  font-size: 21px;
+  font-weight: 750;
+  margin: 0 0 6px;
+}
+
+.scwm-modal-header p {
+  color: #6b7bb0;
+  font-size: 12px;
+  margin: 0;
+}
+
+.scwm-modal-header .scwm-eyebrow {
+  margin-bottom: 8px;
+}
+
+.scwm-close {
+  width: 37px;
+  height: 37px;
+  flex-shrink: 0;
+  border: none;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #6b7bb0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.scwm-close:hover {
+  color: #2e5de6;
+  background: #dbe6ff;
+}
+
+.scwm-modal-body {
+  padding: 20px 25px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.scwm-modal-footer {
+  padding: 13px 25px;
+  display: flex;
+  justify-content: flex-end;
+  border-top: 1px solid #cfdbf7;
+  flex-shrink: 0;
+}
+
+.scwm-secondary-button {
+  min-height: 37px;
+  padding: 0 17px;
+  border: 1px solid #cfdbf7;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #3b4a82;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.scwm-secondary-button:hover {
+  background: #dbe6ff;
+}
+
+/* =========================================
+   STAFF PROFILE MODAL
+========================================= */
+
+.scwm-staff-modal {
+  width: min(850px, 100%);
+}
+
+.scwm-staff-profile {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border: 1px solid #cfdbf7;
+  border-radius: 13px;
+  background: #f3f7ff;
+  margin-bottom: 18px;
+}
+
+.scwm-staff-profile .scwm-staff-avatar {
+  width: 57px;
+  height: 57px;
+  font-size: 16px;
+}
+
+.scwm-staff-profile h3 {
+  color: #071039;
+  font-size: 15px;
+  margin: 0 0 4px;
+}
+
+.scwm-staff-profile span {
+  display: block;
+  color: #6b7bb0;
+  font-size: 10px;
+  margin-bottom: 8px;
+}
+
+.scwm-staff-profile p {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #3b4a82;
+  font-size: 11px;
+  margin: 5px 0 0;
+}
+
+.scwm-staff-profile p svg {
+  color: #6b7bb0;
+}
+
+.scwm-staff-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.scwm-staff-stats > div {
+  padding: 14px;
+  border: 1px solid #cfdbf7;
+  border-radius: 11px;
+  background: #f3f7ff;
+}
+
+.scwm-staff-stats span {
+  display: block;
+  color: #6b7bb0;
+  font-size: 10px;
+  font-weight: 600;
+  margin-bottom: 9px;
+}
+
+.scwm-staff-stats strong {
+  color: #071039;
+  font-size: 22px;
+}
+
+.scwm-staff-stats strong.green {
+  color: #0f766e;
+}
+
+.scwm-staff-stats strong.orange {
+  color: #b45309;
+}
+
+.scwm-staff-stats strong.blue {
+  color: #2e5de6;
+}
+
+/* Assigned complaint heading */
+
+.scwm-assigned-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.scwm-assigned-heading h3 {
+  color: #071039;
+  font-size: 15px;
+  margin: 0 0 5px;
+}
+
+.scwm-assigned-heading p {
+  color: #6b7bb0;
+  font-size: 11px;
+  margin: 0;
+}
+
+.scwm-assigned-heading > strong {
+  color: #2e5de6;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+/* Work filters */
+
+.scwm-work-filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.scwm-work-filters label {
+  height: 39px;
+  padding: 0 11px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #cfdbf7;
+  border-radius: 8px;
+  color: #6b7bb0;
+}
+
+.scwm-work-filters input {
+  width: 100%;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 11px;
+  color: #3b4a82;
+}
+
+.scwm-work-filters select {
+  height: 39px;
+}
+
+/* Complaint cards */
+
+.scwm-complaint-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.scwm-complaint-card {
+  padding: 16px;
+  border: 1px solid #cfdbf7;
+  border-radius: 12px;
+  background: #e6edfd;
+  transition: .2s ease;
+}
+
+.scwm-complaint-card:hover {
+  border-color: #cfdbf7;
+  box-shadow: 0 5px 16px rgba(15, 34, 112, .05);
+}
+
+.scwm-complaint-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.scwm-request-id {
+  display: block;
+  color: #2e5de6;
+  font-size: 10px;
+  margin-bottom: 8px;
+}
+
+.scwm-complaint-top h4 {
+  color: #071039;
+  font-size: 14px;
+  margin: 0 0 6px;
+  text-transform: capitalize;
+}
+
+.scwm-complaint-top p {
+  color: #6b7bb0;
+  font-size: 11px;
+  margin: 0;
+}
+
+/* Status badge */
+
+.scwm-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 10px;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #3b4a82;
+  font-size: 10px;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+.scwm-status > span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.scwm-status.completed,
+.scwm-status.closed {
+  color: #0f766e;
+  background: #ccfbf1;
+}
+
+.scwm-status.in_progress,
+.scwm-status.on_the_way,
+.scwm-status.arrived,
+.scwm-status.pickup_completed,
+.scwm-status.in_transit {
+  color: #2e5de6;
+  background: #dbe6ff;
+}
+
+.scwm-status.assigned {
+  color: #b45309;
+  background: #fef3c7;
+}
+
+.scwm-status.submitted,
+.scwm-status.under_review,
+.scwm-status.approved {
+  color: #b45309;
+  background: #fef3c7;
+}
+
+.scwm-status.rejected {
+  color: #b91c1c;
+  background: #fef2f2;
+}
+
+/* Complaint information */
+
+.scwm-complaint-info {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+  padding: 14px 0;
+  border-top: 1px solid #cfdbf7;
+  border-bottom: 1px solid #cfdbf7;
+}
+
+.scwm-complaint-info span {
+  display: block;
+  color: #6b7bb0;
+  font-size: 9px;
+  margin-bottom: 6px;
+}
+
+.scwm-complaint-info strong {
+  color: #3b4a82;
+  font-size: 10px;
+  font-weight: 650;
+}
+
+.scwm-complaint-bottom {
+  padding-top: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.scwm-complaint-bottom > span {
+  color: #6b7bb0;
+  font-size: 10px;
+}
+
+.scwm-complaint-bottom button {
+  min-height: 34px;
+  padding: 0 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  border: 1px solid #cfdbf7;
+  border-radius: 8px;
+  background: #dbe6ff;
+  color: #2e5de6;
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.scwm-complaint-bottom button:hover {
+  color: #fff;
+  background: #2e5de6;
+}
+
+/* =========================================
+   COMPLAINT DETAILS MODAL
+========================================= */
+
+.scwm-complaint-modal {
+  width: min(800px, 100%);
+}
+
+.scwm-detail-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 14px;
+  border-radius: 11px;
+  background: #ffffff;
+  border: 1px solid #cfdbf7;
+}
+
+.scwm-detail-status > div {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.scwm-detail-status > div > span {
+  color: #6b7bb0;
+  font-size: 10px;
+}
+
+.scwm-detail-status > div > strong {
+  color: #3b4a82;
+  font-size: 12px;
+}
+
+.scwm-detail-section {
+  padding: 20px 0;
+  border-bottom: 1px solid #cfdbf7;
+}
+
+.scwm-detail-section:last-child {
+  border-bottom: none;
+}
+
+.scwm-detail-section h3 {
+  color: #071039;
+  font-size: 14px;
+  margin: 0 0 15px;
+}
+
+.scwm-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 17px;
+}
+
+.scwm-detail-grid > div {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.scwm-detail-grid > div > svg {
+  color: #2e5de6;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.scwm-detail-grid small {
+  display: block;
+  color: #6b7bb0;
+  font-size: 10px;
+  margin-bottom: 5px;
+}
+
+.scwm-detail-grid strong {
+  display: block;
+  color: #3b4a82;
+  font-size: 11px;
+  font-weight: 650;
+  text-transform: capitalize;
+}
+
+.scwm-description {
+  margin-top: 17px;
+  padding: 13px;
+  border-radius: 9px;
+  background: #f3f7ff;
+}
+
+.scwm-description small {
+  display: block;
+  color: #6b7bb0;
+  font-size: 10px;
+  margin-bottom: 7px;
+}
+
+.scwm-description p {
+  color: #3b4a82;
+  font-size: 12px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Assigned person */
+
+.scwm-assigned-person {
+  padding: 13px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid #cfdbf7;
+  border-radius: 10px;
+  background: #f3f7ff;
+}
+
+.scwm-assigned-person strong {
+  display: block;
+  color: #3b4a82;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.scwm-assigned-person span {
+  color: #6b7bb0;
+  font-size: 10px;
+}
+
+/* Photos */
+
+.scwm-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.scwm-photo-item {
+  display: block;
+  overflow: hidden;
+  border: 1px solid #cfdbf7;
+  border-radius: 10px;
+  background: #ffffff;
+  text-decoration: none;
+}
+
+.scwm-photo-item img {
+  display: block;
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.scwm-photo-item span {
+  padding: 9px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #3b4a82;
+  font-size: 10px;
+}
+
+.scwm-no-photos {
+  min-height: 130px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+  border: 1px dashed #cfdbf7;
+  border-radius: 10px;
+  color: #6b7bb0;
+  text-align: center;
+  background: #f3f7ff;
+}
+
+.scwm-no-photos strong {
+  color: #3b4a82;
+  font-size: 12px;
+}
+
+.scwm-no-photos span {
+  max-width: 330px;
+  color: #6b7bb0;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+/* Footer */
+
+.scwm-footer {
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  color: #6b7bb0;
+  font-size: 10px;
+}
+
+.scwm-footer span:last-child {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1200px) {
+  .scwm-summary-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 850px) {
+  .scwm-summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .scwm-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .scwm-toolbar select {
+    width: 100%;
+  }
+
+  .scwm-complaint-info {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .scwm-content {
+    padding: 18px 14px;
+  }
+
+  .scwm-page-heading {
+    align-items: flex-start;
+  }
+
+  .scwm-page-heading h1 {
+    font-size: 22px;
+  }
+
+  .scwm-refresh {
+    padding: 0 10px;
+  }
+
+  .scwm-summary-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .scwm-stat-card {
+    min-height: 85px;
+    padding: 12px;
+    gap: 9px;
+  }
+
+  .scwm-stat-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .scwm-stat-card strong {
+    font-size: 21px;
+  }
+
+  .scwm-table-heading {
+    padding: 17px;
+    align-items: flex-start;
+  }
+
+  .scwm-toolbar {
+    padding: 0 15px 15px;
+  }
+
+  .scwm-overlay {
+    padding: 8px;
+  }
+
+  .scwm-modal {
+    max-height: 95vh;
+    border-radius: 13px;
+  }
+
+  .scwm-modal-header {
+    padding: 16px;
+  }
+
+  .scwm-modal-body {
+    padding: 15px;
+  }
+
+  .scwm-staff-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .scwm-detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .scwm-photo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .scwm-complaint-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .scwm-complaint-bottom button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .scwm-footer {
+    gap: 10px;
+    flex-direction: column;
+  }
+}
+/* =========================================
+   STAFF AVAILABILITY BADGE
+========================================= */
+
+.scwm-availability-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 7px 11px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.scwm-availability-badge.free {
+  color: #0f766e;
+  background: #ccfbf1;
+  border: 1px solid #99f6e4;
+}
+
+.scwm-availability-badge.working {
+  color: #b45309;
+  background: #fef3c7;
+  border: 1px solid #fde68a;
+}
+
+.scwm-availability-dot {
+  width: 7px;
+  height: 7px;
+  display: inline-block;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.scwm-availability-badge small {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 17px;
+  height: 17px;
+  padding: 0 4px;
+  border-radius: 50%;
+  background: rgba(7, 16, 57, 0.07);
+  font-size: 9px;
+  font-weight: 700;
+}
+
+/* =========================================
+   STAFF PROFILE AVAILABILITY
+========================================= */
+
+.scwm-profile-availability {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 12px;
+}
+
+.scwm-profile-availability > span {
+  color: #6b7bb0;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* =========================================
+   LOCATION DETAILS
+========================================= */
+
+.scwm-location-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.scwm-location-heading h3 {
+  margin-bottom: 5px;
+}
+
+.scwm-location-heading p {
+  margin: 0;
+  color: #6b7bb0;
+  font-size: 12px;
+}
+
+.scwm-location-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #2e5de6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scwm-location-card {
+  padding: 18px;
+  border: 1px solid #cfdbf7;
+  border-radius: 12px;
+  background: #f3f7ff;
+}
+
+.scwm-location-address,
+.scwm-location-extra {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 18px;
+  color: #2e5de6;
+}
+
+.scwm-location-address > div,
+.scwm-location-extra > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.scwm-location-address small,
+.scwm-location-extra small,
+.scwm-location-meta small,
+.scwm-location-coordinates small {
+  color: #6b7bb0;
+  font-size: 11px;
+}
+
+.scwm-location-address strong,
+.scwm-location-extra strong,
+.scwm-location-meta strong,
+.scwm-location-coordinates strong {
+  color: #3b4a82;
+  font-size: 13px;
+  line-height: 1.6;
+  font-weight: 600;
+}
+
+.scwm-location-meta,
+.scwm-location-coordinates {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+  padding-top: 15px;
+  margin-top: 15px;
+  border-top: 1px solid #cfdbf7;
+}
+
+.scwm-location-meta > div,
+.scwm-location-coordinates > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.scwm-location-coordinates {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.scwm-map-button {
+  margin-top: 18px;
+  min-height: 40px;
+  padding: 0 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 8px;
+  background: #2e5de6;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.scwm-map-button:hover {
+  background: #1a3bb0;
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+/* =========================================
+   STAFF WORKFLOW TIMELINE
+========================================= */
+
+.scwm-workflow-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.scwm-workflow-heading h3 {
+  margin-bottom: 5px;
+}
+
+.scwm-workflow-heading p {
+  margin: 0;
+  color: #6b7bb0;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.scwm-workflow-timeline {
+  padding: 8px 5px 5px;
+}
+
+.scwm-workflow-step {
+  display: flex;
+  gap: 14px;
+  min-height: 76px;
+}
+
+.scwm-workflow-indicator {
+  width: 25px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.scwm-workflow-indicator > span {
+  width: 27px;
+  height: 27px;
+  border: 1px solid #cfdbf7;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #6b7bb0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.scwm-workflow-indicator > i {
+  width: 2px;
+  flex: 1;
+  min-height: 42px;
+  background: #ffffff;
+}
+
+.scwm-workflow-step.completed .scwm-workflow-indicator > span {
+  background: #ccfbf1;
+  border-color: #99f6e4;
+  color: #0f766e;
+}
+
+.scwm-workflow-step.completed .scwm-workflow-indicator > i {
+  background: #22c55e;
+}
+
+.scwm-workflow-step.current .scwm-workflow-indicator > span {
+  background: #dbe6ff;
+  border: 2px solid #2e5de6;
+  color: #2e5de6;
+}
+
+.scwm-workflow-step.upcoming .scwm-workflow-indicator > span {
+  background: #ffffff;
+  border-color: #cfdbf7;
+}
+
+.scwm-workflow-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #cfdbf7;
+}
+
+.scwm-workflow-content {
+  flex: 1;
+  padding: 3px 0 20px;
+}
+
+.scwm-workflow-title {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.scwm-workflow-title strong {
+  color: #3b4a82;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.scwm-workflow-step.upcoming .scwm-workflow-title strong {
+  color: #6b7bb0;
+}
+
+.scwm-workflow-step.current .scwm-workflow-title strong {
+  color: #2e5de6;
+}
+
+.scwm-workflow-content p {
+  margin: 5px 0 0;
+  color: #6b7bb0;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.scwm-workflow-content small {
+  margin-top: 7px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #6b7bb0;
+  font-size: 10px;
+}
+
+.scwm-workflow-current-label,
+.scwm-workflow-done-label {
+  padding: 4px 7px;
+  border-radius: 5px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.scwm-workflow-current-label {
+  background: #dbe6ff;
+  color: #2e5de6;
+}
+
+.scwm-workflow-done-label {
+  background: #ccfbf1;
+  color: #0f766e;
+}
+
+.scwm-workflow-rejected {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 15px;
+  border: 1px solid #fecaca;
+  border-radius: 10px;
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+.scwm-workflow-rejected div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.scwm-workflow-rejected strong {
+  font-size: 13px;
+}
+
+.scwm-workflow-rejected span {
+  color: #b91c1c;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 600px) {
+  .scwm-location-meta {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .scwm-location-coordinates {
+    grid-template-columns: 1fr;
+  }
+
+  .scwm-workflow-heading {
+    flex-direction: column;
+  }
+
+  .scwm-map-button {
+    width: 100%;
+  }
+
+  .scwm-profile-availability {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+/* =========================================================
+   MANAGER 2 THEME - MOTION & INTERACTION LAYER
+   Colours: sidebar #0f2270 | page #ffffff | cards #e6edfd
+   buttons #2e5de6 | accent #f59e0b | text #071039
+   (Appended layer: transitions and animations only.)
+========================================================= */
+
+@keyframes scwm-fade-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes scwm-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scwm-pop {
+  from { opacity: 0; transform: translateY(12px) scale(.98); }
+  to { opacity: 1; transform: none; }
+}
+
+.scwm-page-heading,
+.scwm-table-card {
+  animation: scwm-fade-up .5s ease backwards;
+}
+
+.scwm-stat-card {
+  animation: scwm-fade-up .55s ease backwards;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.scwm-table tbody tr,
+.scwm-complaint-card {
+  transition: background-color .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+
+.scwm-refresh,
+.scwm-view-button,
+.scwm-secondary-button,
+.scwm-close {
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease, transform .15s ease;
+}
+
+.scwm-overlay {
+  animation: scwm-fade .2s ease;
+}
+
+.scwm-modal {
+  animation: scwm-pop .28s cubic-bezier(.2, .8, .2, 1);
+}
+
+.scwm-stat-card:nth-child(1) { animation-delay: 0.08s; }
+.scwm-stat-card:nth-child(2) { animation-delay: 0.16s; }
+.scwm-stat-card:nth-child(3) { animation-delay: 0.24s; }
+.scwm-stat-card:nth-child(4) { animation-delay: 0.32s; }
+.scwm-stat-card:nth-child(5) { animation-delay: 0.40s; }
+
+.scwm-stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 26px rgba(15, 34, 112, .14);
+}
+
+.scwm-complaint-card:hover {
+  transform: none;
+  box-shadow: 0 6px 16px rgba(15, 34, 112, .08);
+}
+
+.scwm-table-card:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.scwm-refresh:not(:disabled):active,
+.scwm-view-button:active,
+.scwm-secondary-button:not(:disabled):active {
+  transform: scale(.97);
+}
+
+@media (max-width: 420px) {
+  .scwm-summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .scwm-overlay {
+    padding: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scwm-shell,
+  .scwm-shell *,
+  .scwm-shell *::before,
+  .scwm-shell *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* =========================================================
+   SIDEBAR SCROLLBAR - hidden (sidebar still scrolls by
+   mouse wheel, touch and keyboard on short screens)
+========================================================= */
+
+.scwm-shell .sc-sidebar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  overscroll-behavior: contain;
+}
+
+.scwm-shell .sc-sidebar::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}

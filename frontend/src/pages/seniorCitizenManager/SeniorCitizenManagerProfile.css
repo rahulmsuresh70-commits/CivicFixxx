@@ -1,0 +1,907 @@
+/* ==========================================
+   SENIOR CITIZEN MANAGER PROFILE
+   Content-only component.
+   Render inside existing dashboard .sc-content.
+========================================== */
+
+.scmp-page {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  color: #071039;
+  overflow-x: hidden;
+  padding: 0 0 28px;
+}
+
+.scmp-page * {
+  box-sizing: border-box;
+}
+
+
+/* ==========================================
+   PAGE HEADING
+========================================== */
+
+.scmp-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin: 0 0 24px;
+  min-width: 0;
+}
+
+.scmp-breadcrumb {
+  font-size: 12px;
+  color: #6b7bb0;
+  margin-bottom: 10px;
+}
+
+.scmp-breadcrumb span {
+  padding: 0 7px;
+  color: #6b7bb0;
+}
+
+.scmp-heading h1 {
+  font-size: 27px;
+  line-height: 1.2;
+  margin: 0;
+  color: #071039;
+  font-weight: 750;
+}
+
+.scmp-heading p {
+  font-size: 13px;
+  color: #6b7bb0;
+  margin: 7px 0 0;
+}
+
+
+/* ==========================================
+   BUTTONS
+========================================== */
+
+.scmp-btn {
+  border: 0;
+  border-radius: 9px;
+  min-height: 40px;
+  padding: 0 15px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.scmp-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.scmp-btn-light {
+  background: #ffffff;
+  border: 1px solid #cfdbf7;
+  color: #3b4a82;
+}
+
+.scmp-btn-light:hover {
+  background: #dbe6ff;
+}
+
+.scmp-btn-primary {
+  background: #2e5de6;
+  color: #fff;
+}
+
+.scmp-btn-primary:hover {
+  background: #1a3bb0;
+}
+
+
+/* ==========================================
+   PROFILE HERO
+========================================== */
+
+.scmp-hero {
+  width: 100%;
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+  gap: 22px;
+
+  padding: 28px 26px;
+
+  border-radius: 14px;
+
+  background: linear-gradient(
+    115deg,
+    #2e5de6,
+    #6e92f2
+  );
+
+  color: #fff;
+
+  position: relative;
+  overflow: hidden;
+
+  margin-bottom: 20px;
+}
+
+.scmp-hero::after {
+  content: "";
+
+  position: absolute;
+
+  width: 220px;
+  height: 220px;
+
+  border: 28px solid rgba(255, 255, 255, 0.09);
+
+  border-radius: 50%;
+
+  right: -35px;
+  top: -105px;
+
+  pointer-events: none;
+}
+
+
+/* AVATAR */
+
+.scmp-avatar {
+  width: 82px;
+  height: 82px;
+
+  flex: 0 0 82px;
+
+  border: 4px solid rgba(255, 255, 255, 0.38);
+
+  border-radius: 50%;
+
+  display: grid;
+  place-items: center;
+
+  font-size: 27px;
+  font-weight: 800;
+
+  background: rgba(255, 255, 255, 0.13);
+}
+
+
+/* HERO DETAILS */
+
+.scmp-hero-copy {
+  min-width: 0;
+  flex: 1;
+}
+
+.scmp-role {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 6px 10px;
+
+  border-radius: 30px;
+
+  background: rgba(255, 255, 255, 0.18);
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.scmp-hero-copy h2 {
+  font-size: 23px;
+  margin: 10px 0 5px;
+  line-height: 1.25;
+  color: #fff;
+}
+
+.scmp-hero-copy > p {
+  font-size: 12px;
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.88);
+
+  overflow-wrap: anywhere;
+}
+
+
+/* STATUS */
+
+.scmp-statuses {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 13px;
+}
+
+.scmp-statuses span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  border-radius: 30px;
+
+  padding: 7px 10px;
+
+  background: rgba(255, 255, 255, 0.16);
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.scmp-statuses i {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+}
+
+
+/* ACCOUNT ID */
+
+.scmp-account-box {
+  position: relative;
+  z-index: 1;
+
+  flex: 0 0 145px;
+
+  padding: 15px;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  border-radius: 11px;
+
+  background: rgba(255, 255, 255, 0.13);
+}
+
+.scmp-account-box small,
+.scmp-account-box span {
+  display: block;
+
+  font-size: 9px;
+
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.scmp-account-box strong {
+  display: block;
+
+  font-size: 23px;
+
+  margin: 8px 0;
+}
+
+
+/* ==========================================
+   PROFILE CARDS
+========================================== */
+
+.scmp-card {
+  width: 100%;
+  min-width: 0;
+
+  background: #e6edfd;
+
+  border: 1px solid #cfdbf7;
+
+  border-radius: 13px;
+
+  padding: 22px;
+
+  margin-bottom: 18px;
+
+  box-shadow: 0 2px 8px rgba(15, 34, 112, 0.025);
+}
+
+
+/* CARD HEADING */
+
+.scmp-card-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-bottom: 22px;
+
+  min-width: 0;
+}
+
+.scmp-card-icon {
+  width: 42px;
+  height: 42px;
+
+  flex: 0 0 42px;
+
+  border-radius: 11px;
+
+  background: #ffffff;
+
+  color: #2e5de6;
+
+  display: grid;
+  place-items: center;
+}
+
+.scmp-card-icon.scmp-green {
+  background: #ccfbf1;
+  color: #0f766e;
+}
+
+.scmp-card-heading > div:nth-child(2) {
+  min-width: 0;
+  flex: 1;
+}
+
+.scmp-card-heading h3 {
+  font-size: 15px;
+
+  margin: 0 0 5px;
+
+  color: #071039;
+}
+
+.scmp-card-heading p {
+  font-size: 11px;
+
+  color: #6b7bb0;
+
+  margin: 0;
+
+  line-height: 1.5;
+}
+
+.scmp-edit-btn {
+  flex: 0 0 auto;
+}
+
+
+/* ==========================================
+   PERSONAL INFORMATION FIELDS
+========================================== */
+
+.scmp-fields {
+  display: grid;
+
+  grid-template-columns: repeat(
+    2,
+    minmax(0, 1fr)
+  );
+
+  gap: 19px 22px;
+}
+
+.scmp-field {
+  display: block;
+  min-width: 0;
+}
+
+.scmp-field > span {
+  display: block;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  color: #6b7bb0;
+
+  margin: 0 0 8px;
+}
+
+.scmp-field > div {
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 0 12px;
+
+  border: 1px solid #cfdbf7;
+
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  color: #6b7bb0;
+
+  min-width: 0;
+}
+
+.scmp-field input {
+  width: 100%;
+  min-width: 0;
+
+  border: 0;
+  outline: 0;
+
+  background: transparent;
+
+  color: #071039;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.scmp-field input:disabled {
+  opacity: 1;
+
+  color: #071039;
+
+  -webkit-text-fill-color: #071039;
+}
+
+.scmp-field:has(
+  input:not(:disabled):not([readonly])
+) > div {
+  border-color: #afc5f8;
+  background: #ffffff;
+}
+
+.scmp-field > small {
+  display: block;
+
+  margin-top: 5px;
+
+  color: #6b7bb0;
+
+  font-size: 10px;
+}
+
+
+/* ==========================================
+   FORM ACTIONS
+========================================== */
+
+.scmp-form-actions {
+  display: flex;
+  justify-content: flex-end;
+
+  gap: 9px;
+
+  margin-top: 20px;
+}
+
+
+/* ==========================================
+   INFORMATION NOTE
+========================================== */
+
+.scmp-note {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 11px;
+
+  margin-top: 20px;
+
+  padding: 13px 14px;
+
+  border: 1px solid #cfdbf7;
+
+  background: #f3f7ff;
+
+  border-radius: 8px;
+
+  color: #2e5de6;
+}
+
+.scmp-note strong {
+  font-size: 11px;
+}
+
+.scmp-note p {
+  font-size: 10px;
+
+  line-height: 1.6;
+
+  color: #6b7bb0;
+
+  margin: 5px 0 0;
+}
+
+
+/* ==========================================
+   SERVICE AREAS
+========================================== */
+
+.scmp-area-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.scmp-area {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 10px 12px;
+
+  background: #ffffff;
+
+  border: 1px solid #cfdbf7;
+
+  border-radius: 8px;
+
+  color: #3b4a82;
+
+  font-size: 12px;
+}
+
+.scmp-empty {
+  padding: 16px;
+
+  border: 1px dashed #cfdbf7;
+
+  border-radius: 8px;
+
+  color: #6b7bb0;
+
+  font-size: 12px;
+
+  text-align: center;
+}
+
+
+/* ==========================================
+   ACCOUNT SECURITY
+========================================== */
+
+.scmp-security-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  padding: 14px 0;
+
+  border-top: 1px solid #cfdbf7;
+
+  color: #6b7bb0;
+}
+
+.scmp-security-row strong {
+  font-size: 12px;
+  color: #071039;
+}
+
+.scmp-security-row p {
+  font-size: 11px;
+
+  color: #6b7bb0;
+
+  margin: 5px 0 0;
+
+  line-height: 1.5;
+}
+
+
+/* PASSWORD FORM */
+
+.scmp-password-form {
+  display: grid;
+
+  grid-template-columns: repeat(
+    3,
+    minmax(0, 1fr)
+  );
+
+  gap: 14px;
+
+  align-items: end;
+}
+
+.scmp-password-form .scmp-form-actions {
+  grid-column: 1 / -1;
+  margin-top: 0;
+}
+
+.scmp-password-hint {
+  grid-column: 1 / -1;
+
+  margin: 0;
+
+  color: #6b7bb0;
+
+  font-size: 10px;
+
+  line-height: 1.5;
+}
+
+.scmp-password-hint code {
+  font-size: 10px;
+
+  background: #ffffff;
+
+  padding: 2px 4px;
+
+  border-radius: 4px;
+}
+
+
+/* ==========================================
+   ALERTS
+========================================== */
+
+.scmp-alert {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 9px;
+
+  padding: 12px 14px;
+
+  border-radius: 8px;
+
+  margin: 0 0 15px;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+.scmp-error {
+  background: #fef2f2;
+
+  border: 1px solid #fecaca;
+
+  color: #b91c1c;
+}
+
+.scmp-success {
+  background: #ccfbf1;
+
+  border: 1px solid #99f6e4;
+
+  color: #0f766e;
+}
+
+
+/* ==========================================
+   LOADING STATE
+========================================== */
+
+.scmp-state {
+  min-height: 180px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  color: #6b7bb0;
+
+  font-size: 13px;
+}
+
+.scmp-spin {
+  animation: scmp-rotate 1s linear infinite;
+}
+
+@keyframes scmp-rotate {
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
+
+
+/* ==========================================
+   TABLET RESPONSIVE
+========================================== */
+
+@media (max-width: 760px) {
+
+  .scmp-heading {
+    align-items: flex-start;
+  }
+
+  .scmp-heading h1 {
+    font-size: 23px;
+  }
+
+  .scmp-hero {
+    padding: 22px 18px;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .scmp-avatar {
+    width: 68px;
+    height: 68px;
+    flex-basis: 68px;
+    font-size: 22px;
+  }
+
+  .scmp-hero-copy h2 {
+    font-size: 19px;
+  }
+
+  .scmp-account-box {
+    flex-basis: 100%;
+
+    display: grid;
+
+    grid-template-columns: 1fr auto;
+
+    align-items: center;
+
+    gap: 3px 10px;
+
+    padding: 10px 12px;
+  }
+
+  .scmp-account-box small {
+    grid-column: 1;
+  }
+
+  .scmp-account-box strong {
+    grid-column: 2;
+    grid-row: 1 / 3;
+
+    margin: 0;
+  }
+
+  .scmp-account-box span {
+    grid-column: 1;
+  }
+
+  .scmp-card {
+    padding: 17px;
+  }
+
+  .scmp-fields {
+    gap: 15px;
+
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .scmp-password-form {
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
+
+
+/* ==========================================
+   MOBILE RESPONSIVE
+========================================== */
+
+@media (max-width: 520px) {
+
+  .scmp-heading {
+    gap: 10px;
+  }
+
+  .scmp-heading h1 {
+    font-size: 21px;
+  }
+
+  .scmp-heading p {
+    font-size: 11px;
+  }
+
+  .scmp-heading > .scmp-btn {
+    padding: 0 10px;
+    min-height: 36px;
+  }
+
+  .scmp-hero {
+    border-radius: 11px;
+  }
+
+  .scmp-card-heading {
+    flex-wrap: wrap;
+  }
+
+  .scmp-edit-btn {
+    margin-left: 54px;
+  }
+
+  .scmp-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .scmp-form-actions {
+    justify-content: stretch;
+  }
+
+  .scmp-form-actions .scmp-btn {
+    flex: 1;
+  }
+
+  .scmp-security-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .scmp-password-form {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+/* =========================================================
+   MANAGER 2 THEME - MOTION & INTERACTION LAYER
+   Colours: sidebar #0f2270 | page #ffffff | cards #e6edfd
+   buttons #2e5de6 | accent #f59e0b | text #071039
+   (Appended layer: transitions and animations only.)
+========================================================= */
+
+@keyframes scmp-pf-fade-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes scmp-pf-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scmp-pf-pop {
+  from { opacity: 0; transform: translateY(12px) scale(.98); }
+  to { opacity: 1; transform: none; }
+}
+
+.scmp-heading,
+.scmp-hero {
+  animation: scmp-pf-fade-up .5s ease backwards;
+}
+
+.scmp-card {
+  animation: scmp-pf-fade-up .55s ease backwards;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.scmp-btn {
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease, transform .15s ease;
+}
+
+.scmp-card:nth-child(1) { animation-delay: 0.12s; }
+.scmp-card:nth-child(2) { animation-delay: 0.20s; }
+.scmp-card:nth-child(3) { animation-delay: 0.28s; }
+.scmp-card:nth-child(4) { animation-delay: 0.36s; }
+
+.scmp-btn:not(:disabled):active {
+  transform: scale(.97);
+}
+
+.scmp-btn-primary:not(:disabled):hover {
+  box-shadow: 0 6px 16px rgba(46, 93, 230, .3);
+}
+
+@media (max-width: 400px) {
+  .scmp-heading h1 {
+    font-size: 22px;
+  }
+
+  .scmp-hero {
+    padding: 22px 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scmp-page,
+  .scmp-page *,
+  .scmp-page *::before,
+  .scmp-page *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
